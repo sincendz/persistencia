@@ -1,0 +1,6 @@
+logging:
+  level: "DEBUG"
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  file: "app.log"
+data:
+  file: "data.csv"

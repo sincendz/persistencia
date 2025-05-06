@@ -1,0 +1,99 @@
+2025-05-06 10:30:42,486 - root - INFO - Entrando na função que dropa 1000 numeros aleatorios de 0 a 255
+2025-05-06 10:48:19,265 - root - INFO - Acesso ao endpoint root.
+2025-05-06 11:01:14,804 - root - INFO - Arquivo de CSV não existe
+2025-05-06 11:02:39,244 - root - WARNING - Diretorio não existe
+2025-05-06 11:10:20,443 - root - WARNING - Animais.csv não existia.
+2025-05-06 12:05:01,791 - root - INFO - Acesso ao endpoint root.
+2025-05-06 12:05:25,020 - root - INFO - Acesso ao endpoint root.
+2025-05-06 12:06:14,814 - root - WARNING - Animais.csv não existia.
+2025-05-06 12:16:26,255 - root - INFO - Leitura do csv
+2025-05-06 12:17:06,233 - root - INFO - Leitura do csv
+2025-05-06 12:17:35,319 - root - INFO - Leitura do csv
+2025-05-06 12:18:14,940 - root - INFO - Leitura do csv
+2025-05-06 12:18:58,674 - root - INFO - Leitura do csv
+2025-05-06 12:19:09,934 - root - INFO - Leitura do csv
+2025-05-06 12:19:17,905 - root - INFO - Leitura do csv
+2025-05-06 12:19:36,442 - root - INFO - Leitura do csv
+2025-05-06 12:19:57,356 - root - INFO - Leitura do csv
+2025-05-06 12:20:07,111 - root - INFO - Leitura do csv
+2025-05-06 12:20:33,694 - root - INFO - Leitura do csv
+2025-05-06 12:20:49,306 - root - INFO - Leitura do csv
+2025-05-06 12:21:10,032 - root - INFO - Leitura do csv
+2025-05-06 12:22:20,675 - root - INFO - Leitura do csv
+2025-05-06 12:24:24,758 - root - INFO - Leitura do csv
+2025-05-06 12:24:38,032 - root - INFO - Leitura do csv
+2025-05-06 12:38:42,717 - root - INFO - Acesso ao endpoint root.
+2025-05-06 12:38:53,551 - root - INFO - Leitura do csv
+2025-05-06 12:39:23,533 - root - INFO - Leitura do csv
+2025-05-06 12:39:41,496 - root - INFO - Leitura do csv
+2025-05-06 12:40:13,335 - root - INFO - Endpoint GET Pessoas chamado
+2025-05-06 12:40:13,335 - root - INFO - Leitura do csv
+2025-05-06 12:53:36,368 - root - INFO - Nova pessoa cadastrada
+2025-05-06 12:53:36,369 - root - INFO - Leitura do csv
+2025-05-06 12:53:36,370 - root - WARNING - Erro ao salvar no csv: write() argument must be str, not list 
+2025-05-06 12:56:13,495 - root - INFO - Nova pessoa cadastrada
+2025-05-06 12:56:13,495 - root - INFO - Dado que chegou para ser salvo no CSV : 10,Mário,20,
+2025-05-06 12:56:13,496 - root - INFO - Leitura do csv
+2025-05-06 12:56:13,496 - root - INFO - Arquivo de CSV modificado
+2025-05-06 12:56:44,984 - root - INFO - Nova pessoa cadastrada
+2025-05-06 12:56:44,984 - root - INFO - Dado que chegou para ser salvo no CSV : 10,Mário,20,
+2025-05-06 12:56:44,985 - root - INFO - Leitura do csv
+2025-05-06 12:56:44,985 - root - INFO - Arquivo de CSV modificado
+2025-05-06 12:59:56,176 - root - INFO - Leitura do csv
+2025-05-06 13:00:09,036 - root - INFO - Endpoint GET Pessoas chamado
+2025-05-06 13:00:09,036 - root - INFO - Leitura do csv
+2025-05-06 13:00:16,290 - root - INFO - Leitura do csv
+2025-05-06 13:01:13,030 - root - INFO - Leitura do csv
+2025-05-06 13:01:13,030 - root - INFO - Checando se 10 já existe no sistema. 
+2025-05-06 13:01:19,745 - root - INFO - Acesso ao endpoint root.
+2025-05-06 13:01:27,366 - root - INFO - Endpoint GET Pessoas chamado
+2025-05-06 13:01:27,366 - root - INFO - Leitura do csv
+2025-05-06 13:01:46,041 - root - INFO - Leitura do csv
+2025-05-06 13:01:46,041 - root - INFO - Checando se 22 já existe no sistema. 
+2025-05-06 13:02:58,151 - root - INFO - Leitura do csv
+2025-05-06 13:02:58,152 - root - INFO - Checando se 11 já existe no sistema. 
+2025-05-06 13:02:58,152 - root - INFO - Checando se 11 já existe no sistema. 
+2025-05-06 13:02:58,152 - root - INFO - Checando se 11 já existe no sistema. 
+2025-05-06 13:02:58,152 - root - INFO - Checando se 11 já existe no sistema. 
+2025-05-06 13:02:58,152 - root - INFO - Checando se 11 já existe no sistema. 
+2025-05-06 13:02:58,152 - root - INFO - Checando se 11 já existe no sistema. 
+2025-05-06 13:02:58,152 - root - INFO - Checando se 11 já existe no sistema. 
+2025-05-06 13:03:19,339 - root - INFO - Leitura do csv
+2025-05-06 13:03:19,339 - root - INFO - Checando se 11 já existe no sistema. 
+2025-05-06 13:03:19,339 - root - INFO - Checando se 11 já existe no sistema. 
+2025-05-06 13:03:19,339 - root - INFO - Checando se 11 já existe no sistema. 
+2025-05-06 13:03:19,340 - root - INFO - Checando se 11 já existe no sistema. 
+2025-05-06 13:03:19,340 - root - INFO - Checando se 11 já existe no sistema. 
+2025-05-06 13:03:19,340 - root - INFO - Checando se 11 já existe no sistema. 
+2025-05-06 13:03:19,340 - root - INFO - Checando se 11 já existe no sistema. 
+2025-05-06 13:03:19,340 - root - INFO - Nova pessoa cadastrada
+2025-05-06 13:03:19,340 - root - INFO - Dado que chegou para ser salvo no CSV : 11,Erick,26,
+2025-05-06 13:03:19,341 - root - INFO - Leitura do csv
+2025-05-06 13:03:19,341 - root - INFO - Arquivo de CSV modificado
+2025-05-06 13:06:06,267 - root - INFO - Leitura do csv
+2025-05-06 13:06:06,267 - root - INFO - Checando se 10 já existe no sistema. 
+2025-05-06 13:06:06,267 - root - DEBUG - ['id', 'nome', 'idade']
+2025-05-06 13:06:06,268 - root - INFO - Checando se 10 já existe no sistema. 
+2025-05-06 13:06:06,268 - root - DEBUG - ['1', 'Ana', '25']
+2025-05-06 13:06:06,268 - root - INFO - Checando se 10 já existe no sistema. 
+2025-05-06 13:06:06,268 - root - DEBUG - ['2', 'Bruno', '30']
+2025-05-06 13:06:06,268 - root - INFO - Checando se 10 já existe no sistema. 
+2025-05-06 13:06:06,268 - root - DEBUG - ['3', 'Carla', '22']
+2025-05-06 13:06:06,269 - root - INFO - Checando se 10 já existe no sistema. 
+2025-05-06 13:06:06,269 - root - DEBUG - ['4', 'Daniel', '28']
+2025-05-06 13:06:06,269 - root - INFO - Checando se 10 já existe no sistema. 
+2025-05-06 13:06:06,269 - root - DEBUG - ['5', 'Elisa', '35']
+2025-05-06 13:06:06,269 - root - INFO - Checando se 10 já existe no sistema. 
+2025-05-06 13:06:06,270 - root - DEBUG - ['10', 'Mário', '20']
+2025-05-06 13:06:06,270 - root - INFO - Nova pessoa cadastrada
+2025-05-06 13:06:06,270 - root - INFO - Dado que chegou para ser salvo no CSV : 10,asdad,adasdads,
+2025-05-06 13:06:06,270 - root - INFO - Leitura do csv
+2025-05-06 13:06:06,271 - root - INFO - Arquivo de CSV modificado
+2025-05-06 13:07:52,903 - root - INFO - Endpoint GET Pessoas chamado
+2025-05-06 13:07:52,904 - root - INFO - Leitura do csv
+2025-05-06 13:08:07,919 - root - INFO - Leitura do csv
+2025-05-06 13:08:07,920 - root - INFO - Checando se 10 já existe no sistema. 
+2025-05-06 13:08:07,920 - root - INFO - ('10', 'Jose', '99') id já existe no sistema. Não é possivel cadastrar
+2025-05-06 13:10:48,221 - root - INFO - Leitura do csv
+2025-05-06 13:10:48,221 - root - INFO - Checando se 10 já existe no sistema. 
+2025-05-06 13:10:48,221 - root - INFO - ('10', 'Erick', '22') id já existe no sistema. Não é possivel cadastrar
