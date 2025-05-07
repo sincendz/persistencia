@@ -1,6 +1,6 @@
-from instanciaLogs import Logs,logging
-import os, csv
+from instanciaLogs import Logs , logging
 from pathlib import Path
+from pydantic import BaseModel
 
 log = Logs()
 
@@ -9,29 +9,41 @@ PATH = Path('db')
 PATH.mkdir(exist_ok=True)
 
 # Caminho até o csv
-ANIMAIS = PATH / 'animais.csv'
+PESSOAS = PATH / 'pessoas.csv'
 
-#Checa se o csv existe.
-if not ANIMAIS.exists():
-    logging.warning("Animais.csv não existia.")
-    ANIMAIS.touch()
+class Pessoa(BaseModel):
+    id: int
+    name: str
+    age: int
+
+# Checa se o csv existe. Se não, cria com cabeçalho
+if not PESSOAS.exists():
+    logging.warning("PESSOAS.csv não existia. Criando arquivo com cabeçalho.")
+    with open(PESSOAS, 'w') as f:
+        f.write("id,name,age\n")
 
 def read_csv():
-    animais = []
-    with open(ANIMAIS,'r') as file:
-        logging.info("Leitura do csv")
-        line = file.readlines()
-        for i in line:
-            animais.append(i.strip())
-    #animais.pop(0) # Remove os indices da tabela
-    return animais
-        
-    
-def write_csv(person):
-    logging.info(f"Dado que chegou para ser salvo no CSV : {person}")
-    pessoas = read_csv()
-    pessoas.append(person)
-    with open(ANIMAIS , 'a') as file:
-        file.write(person)
-        logging.info("Arquivo de CSV modificado")
-        
+    pessoas = []
+    with open(PESSOAS, 'r') as file:
+        logging.info("Leitura do csv.")
+        lines = file.readlines()
+        for line in lines:
+            pessoas.append(line.strip())
+    return pessoas
+
+def write_csv(person: Pessoa):
+    logging.info(f"Dado que chegou para ser salvo no CSV: {person}")
+    with open(PESSOAS, 'a') as file:
+        file.write(f"{person.id},{person.name},{person.age}\n")
+        logging.info("Arquivo CSV modificado.")
+
+
+def write_csv_list(pessoas):
+    logging.debug(pessoas)
+    with open(PESSOAS, 'w') as file:
+        file.write('id,nome,idade\n')  # adicionei \n
+        for p in pessoas:
+            id,name,idade = p.split(",")
+            file.write(f"{id},{name},{idade}\n")
+    logging.info("CSV mudado")
+
