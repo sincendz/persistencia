@@ -1,0 +1,10 @@
+09/05 - Definidas as entidades 
+        A função read_csv() foi adaptada para ler qualquer um dos arquivos csv
+        Criadas as funções write_csv() para cada entidade (em breve unificar em uma unica função)
+        Criados os endpoints get e post para animais
+
+
+TODO
+        Clientes serem mostrados em formato JSON
+        Unificar as funções write_csv()
+         

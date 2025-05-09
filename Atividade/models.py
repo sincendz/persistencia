@@ -9,8 +9,8 @@ class Cliente(BaseModel):
 
 class Animal(BaseModel):
     id:int
-    dono_id:int
     nome:str
+    cliente_id:int
     especie:str
     raca:str
 

@@ -97,3 +97,61 @@
 2025-05-06 13:10:48,221 - root - INFO - Leitura do csv
 2025-05-06 13:10:48,221 - root - INFO - Checando se 10 já existe no sistema. 
 2025-05-06 13:10:48,221 - root - INFO - ('10', 'Erick', '22') id já existe no sistema. Não é possivel cadastrar
+2025-05-09 16:00:23,717 - root - WARNING - db/clientes.csv não existia. Criando arquivo com cabeçalho.
+2025-05-09 16:00:23,718 - root - WARNING - db/animais.csv não existia. Criando arquivo com cabeçalho.
+2025-05-09 16:00:23,718 - root - WARNING - db/servicos.csv não existia. Criando arquivo com cabeçalho.
+2025-05-09 16:00:45,164 - root - INFO - Endpoint GET Clientes chamado
+2025-05-09 16:00:45,164 - root - INFO - Leitura do csv.
+2025-05-09 16:01:20,261 - root - INFO - Leitura do csv.
+2025-05-09 16:01:20,261 - root - INFO - Checando se 0 já existe no sistema. 
+2025-05-09 16:01:20,261 - root - INFO - Dado que chegou para ser salvo no CSV: id=0 nome='Gustavo' idade='21' telefone='123' email='gustavo@mail.com'
+2025-05-09 16:01:20,262 - root - WARNING - Erro ao salvar no csv: 'Cliente' object has no attribute 'name' 
+2025-05-09 16:01:37,419 - root - INFO - Leitura do csv.
+2025-05-09 16:01:37,420 - root - INFO - Checando se 0 já existe no sistema. 
+2025-05-09 16:01:37,420 - root - INFO - Dado que chegou para ser salvo no CSV: id=0 nome='Gustavo' idade='21' telefone='123' email='gustavo@mail.com'
+2025-05-09 16:01:37,420 - root - WARNING - Erro ao salvar no csv: 'Cliente' object has no attribute 'name' 
+2025-05-09 16:02:51,545 - root - INFO - Leitura do csv.
+2025-05-09 16:02:51,545 - root - INFO - Checando se 0 já existe no sistema. 
+2025-05-09 16:02:51,545 - root - INFO - Dado que chegou para ser salvo no CSV: id=0 nome='Gustavo' idade='21' telefone='123' email='gustavo@mail.com'
+2025-05-09 16:02:51,546 - root - WARNING - Erro ao salvar no csv: 'Cliente' object has no attribute 'name' 
+2025-05-09 16:05:02,858 - root - INFO - Leitura do csv.
+2025-05-09 16:05:02,858 - root - INFO - Checando se 0 já existe no sistema. 
+2025-05-09 16:05:02,858 - root - INFO - Dado que chegou para ser salvo no CSV: id=0 nome='Gustavo' idade='21' telefone='123' email='gustavo@mail.com'
+2025-05-09 16:05:02,858 - root - INFO - Arquivo CSV modificado.
+2025-05-09 16:05:02,858 - root - INFO - Novo cliente cadastrado
+2025-05-09 16:05:09,884 - root - INFO - Endpoint GET Clientes chamado
+2025-05-09 16:05:09,885 - root - INFO - Leitura do csv.
+2025-05-09 16:05:28,384 - root - INFO - Leitura do csv.
+2025-05-09 16:05:28,384 - root - INFO - Checando se 1 já existe no sistema. 
+2025-05-09 16:06:09,983 - root - INFO - Leitura do csv.
+2025-05-09 16:06:09,984 - root - INFO - Checando se 1 já existe no sistema. 
+2025-05-09 16:06:09,984 - root - DEBUG - (0, 1)
+2025-05-09 16:06:09,984 - root - INFO - Dado que chegou para ser salvo no CSV: id=1 nome='Mário' idade='21' telefone='123123' email='mario@mail.com'
+2025-05-09 16:06:09,984 - root - INFO - Arquivo CSV modificado.
+2025-05-09 16:06:09,984 - root - INFO - Novo cliente cadastrado
+2025-05-09 16:06:14,682 - root - INFO - Endpoint GET Clientes chamado
+2025-05-09 16:06:14,682 - root - INFO - Leitura do csv.
+2025-05-09 16:21:34,204 - root - INFO - Endpoint GET Clientes chamado
+2025-05-09 16:21:34,205 - root - INFO - Leitura do csv.
+2025-05-09 16:21:59,056 - root - INFO - Leitura do csv.
+2025-05-09 16:21:59,057 - root - INFO - Checando se 2 já existe no sistema. 
+2025-05-09 16:21:59,057 - root - DEBUG - (0, 2)
+2025-05-09 16:21:59,057 - root - DEBUG - (1, 2)
+2025-05-09 16:21:59,057 - root - INFO - Dado que chegou para ser salvo no CSV: id=2 nome='Maria' idade='21' telefone='2222' email='maria@mail.com'
+2025-05-09 16:21:59,058 - root - INFO - Arquivo CSV modificado.
+2025-05-09 16:21:59,058 - root - INFO - Novo cliente cadastrado
+2025-05-09 16:22:06,260 - root - INFO - Endpoint GET Clientes chamado
+2025-05-09 16:22:06,260 - root - INFO - Leitura do csv.
+2025-05-09 16:38:22,015 - root - INFO - Endpoint GET Animais chamado
+2025-05-09 16:38:22,016 - root - INFO - Leitura do csv.
+2025-05-09 16:41:14,081 - root - INFO - Leitura do csv.
+2025-05-09 16:41:14,082 - root - INFO - Checando se 0 já existe no sistema. 
+2025-05-09 16:41:14,082 - root - INFO - Dado que chegou para ser salvo no CSV: id=0 nome='Floco' cliente_id=0 especie='Gato' raca='Branco'
+2025-05-09 16:41:14,083 - root - INFO - Arquivo CSV modificado.
+2025-05-09 16:41:14,083 - root - INFO - Novo animal cadastrado
+2025-05-09 16:41:22,390 - root - INFO - Leitura do csv.
+2025-05-09 16:41:22,390 - root - INFO - Checando se 0 já existe no sistema. 
+2025-05-09 16:41:22,391 - root - DEBUG - (0, 0)
+2025-05-09 16:41:22,391 - root - INFO - ID 0 já existe no sistema. Não é possível cadastrar.
+2025-05-09 16:41:31,310 - root - INFO - Endpoint GET Animais chamado
+2025-05-09 16:41:31,310 - root - INFO - Leitura do csv.
