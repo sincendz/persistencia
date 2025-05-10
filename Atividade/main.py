@@ -8,19 +8,15 @@ from models import Cliente, Animal, Servico
 app = FastAPI()
 log = Logs() # Instancia o arquivo de logs
 
-class Pessoa(BaseModel):
-    id: int
-    name : str
-    age : int
-    
+
 @app.get("/")
 def root():
     logging.info("Acesso ao endpoint root.")
     return {'msg':'Hello, World!!'}
     
-    
+#-----------------------------------Cliente--------------------------------------    
 @app.get("/clientes")
-def pessoas():
+def clientes():
     logging.info("Endpoint GET Clientes chamado")
     clientes = read_csv(0) # path_index 0 = clientes
     if len(clientes) > 0:
@@ -30,7 +26,7 @@ def pessoas():
     return "Lista vazia."
 
 @app.post("/clientes")
-def add_pessoa(cliente:Cliente):
+def add_cliente(cliente:Cliente):
     
     clientes = read_csv(0)
     clientes.pop(0)
@@ -52,6 +48,36 @@ def add_pessoa(cliente:Cliente):
     
     return {"msg": "cliente cadastrado com sucesso!", "cliente": cliente}
 
+
+@app.put("/clientes/id")
+def update_client_by_id(id_cliente:int, cliente:Cliente):
+    logging.info(f"Função de atulizar cliente foi chamada para: {cliente}")
+    clientes = read_csv(0)
+    clientes.pop(0)
+    change = False
+    new_list = []
+    if len(clientes) > 0:
+        for c in clientes:
+            logging.info(f"Checando se cliente de id : {cliente.id} existe.")
+            id_csv,_,_,_,_ = c.split(",")
+            if(int(id_csv) == id_cliente):
+                logging.info("Cliente encontrado.")
+                change = True
+                if id_cliente != int(cliente.id):
+                    cliente.id = id_cliente
+                cliente_atualizado = f'{cliente.id},{cliente.nome},{cliente.idade},{cliente.telefone}, {cliente.email}'
+                new_list.append(cliente_atualizado)
+            else:
+                new_list.append(c)
+        if change:
+            logging.info("Clente encontado, chamando a função para alterar csv.")
+            write_csv_list_cliente(new_list)
+            return new_list
+        else:
+            logging.info(f"Cliente de id: {id_cliente} não foi encontrado.")
+            raise HTTPException(status_code=404,detail=f"Cliente de id: {id_cliente} não foi encontrado.")
+    raise HTTPException(status_code=404,detail="Lista vazia, impossivel atualizar.")   
+            
 @app.delete("/clientes/id")
 def delete_by_id(id:int):
     logging.info(f"Função de chamar chamada para id : {id}")
@@ -70,9 +96,11 @@ def delete_by_id(id:int):
         if change:
             write_csv_list_cliente(new_list)
         else:
-            logging.info(f"Delete nao mudou a lista, id {id} não encontrado.")      
+            logging.info(f"Delete nao mudou a lista, id {id} não encontrado.")  
+            raise HTTPException(status_code=404, detail=f"ID {id}, não foi encontrado.")    
     return new_list
 
+#-----------------------------------Animal--------------------------------------    
 @app.get('/animais/')
 def animais():
     logging.info("Endpoint GET Animais chamado")
@@ -103,10 +131,4 @@ def add_animal(animal:Animal):
         logging.warning(f"Erro ao salvar no csv: {e} ")
         raise HTTPException(status_code=404, detail="Erro ao salvar no csv")
     
-    return {"msg": "animal cadastrado com sucesso!", "animal": animal}
-
-
-
-
-
-
+    return {"msg": "Animal cadastrado com sucesso!", "animal": animal}

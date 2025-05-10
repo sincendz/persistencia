@@ -10,17 +10,12 @@ PATH = Path('db')
 PATH.mkdir(exist_ok=True)
 
 # Caminho até o csv
-PESSOAS = PATH / 'pessoas.csv'
 CLIENTES = PATH / 'clientes.csv'
 ANIMAIS = PATH / 'animais.csv'
 SERVICOS = PATH / 'servicos.csv'
 
 paths = [CLIENTES,ANIMAIS,SERVICOS]
 
-class Pessoa(BaseModel):
-    id: int
-    name: str
-    age: int
 
 # Checa se o csv existe. Se não, cria com cabeçalho
 for p in paths:

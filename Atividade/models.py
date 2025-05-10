@@ -3,7 +3,7 @@ from pydantic import BaseModel
 class Cliente(BaseModel):
     id:int
     nome:str
-    idade:str
+    idade:int
     telefone:str
     email:str
 
