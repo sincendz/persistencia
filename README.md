@@ -1,3 +1,3 @@
 ```python
-pip install fastapi uvicorn PyYAML
+pip install fastapi uvicorn PyYAML pydantic
 ```
