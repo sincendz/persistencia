@@ -155,3 +155,173 @@
 2025-05-09 16:41:22,391 - root - INFO - ID 0 já existe no sistema. Não é possível cadastrar.
 2025-05-09 16:41:31,310 - root - INFO - Endpoint GET Animais chamado
 2025-05-09 16:41:31,310 - root - INFO - Leitura do csv.
+2025-05-10 17:31:33,597 - root - INFO - Acesso ao endpoint root.
+2025-05-10 17:31:43,648 - root - INFO - Acesso ao endpoint root.
+2025-05-10 17:34:29,517 - root - INFO - Acesso ao endpoint root.
+2025-05-10 17:35:24,158 - root - INFO - Endpoint GET Clientes chamado
+2025-05-10 17:35:24,158 - root - INFO - Leitura do csv.
+2025-05-10 17:35:43,088 - root - INFO - Endpoint GET Clientes chamado
+2025-05-10 17:35:43,088 - root - INFO - Leitura do csv.
+2025-05-10 17:47:57,228 - root - INFO - Acesso ao endpoint root.
+2025-05-10 17:49:52,448 - root - INFO - Endpoint GET Clientes chamado
+2025-05-10 17:49:52,463 - root - INFO - Leitura do csv.
+2025-05-10 17:50:00,735 - root - INFO - Endpoint GET Animais chamado
+2025-05-10 17:50:00,735 - root - INFO - Leitura do csv.
+2025-05-10 17:50:27,641 - root - INFO - Leitura do csv.
+2025-05-10 17:50:27,642 - root - INFO - Checando se 1 já existe no sistema. 
+2025-05-10 17:50:27,642 - root - DEBUG - (0, 1)
+2025-05-10 17:50:27,642 - root - INFO - Dado que chegou para ser salvo no CSV: id=1 nome='Pandinha' cliente_id=0 especie='Cachorro' raca='Vira lata'
+2025-05-10 17:50:27,642 - root - INFO - Arquivo CSV modificado.
+2025-05-10 17:50:27,642 - root - INFO - Novo animal cadastrado
+2025-05-10 17:51:11,197 - root - INFO - Leitura do csv.
+2025-05-10 17:51:11,198 - root - INFO - Checando se 2 já existe no sistema. 
+2025-05-10 17:51:11,198 - root - DEBUG - (0, 2)
+2025-05-10 17:51:11,198 - root - DEBUG - (1, 2)
+2025-05-10 17:51:11,198 - root - INFO - Dado que chegou para ser salvo no CSV: id=2 nome='Pandinha' cliente_id=0 especie='Cachorro' raca='Vira lata'
+2025-05-10 17:51:11,198 - root - INFO - Arquivo CSV modificado.
+2025-05-10 17:51:11,198 - root - INFO - Novo animal cadastrado
+2025-05-10 18:11:17,488 - root - INFO - Endpoint GET Clientes chamado
+2025-05-10 18:11:17,488 - root - INFO - Leitura do csv.
+2025-05-10 18:11:47,622 - root - INFO - Leitura do csv.
+2025-05-10 18:11:47,622 - root - INFO - Checando se 3 já existe no sistema. 
+2025-05-10 18:11:47,622 - root - DEBUG - (0, 3)
+2025-05-10 18:11:47,622 - root - DEBUG - (1, 3)
+2025-05-10 18:11:47,622 - root - DEBUG - (2, 3)
+2025-05-10 18:11:47,622 - root - INFO - Dado que chegou para ser salvo no CSV: id=3 nome='Gurgel' idade='21' telefone='123131' email='gurgel@gay.com'
+2025-05-10 18:11:47,622 - root - INFO - Arquivo CSV modificado.
+2025-05-10 18:11:47,622 - root - INFO - Novo cliente cadastrado
+2025-05-10 18:11:57,731 - root - INFO - Endpoint GET Clientes chamado
+2025-05-10 18:11:57,731 - root - INFO - Leitura do csv.
+2025-05-10 18:12:29,412 - root - INFO - Função de atulizar cliente foi chamada para: id=3 nome='Gustavo Gurgel' idade='10' telefone='123456' email='gg@email.com'
+2025-05-10 18:12:29,413 - root - INFO - Leitura do csv.
+2025-05-10 18:12:29,413 - root - INFO - Checando se cliente de id : 3 existe.
+2025-05-10 18:12:29,413 - root - INFO - Checando se cliente de id : 3 existe.
+2025-05-10 18:12:29,413 - root - INFO - Checando se cliente de id : 3 existe.
+2025-05-10 18:12:29,413 - root - INFO - Checando se cliente de id : 3 existe.
+2025-05-10 18:12:29,413 - root - INFO - Cliente encontrado.
+2025-05-10 18:12:29,413 - root - DEBUG - ['0,Gustavo,21,123,gustavo@mail.com', '1,Mário,21,123123,mario@mail.com', '2,Maria,21,2222,maria@mail.com', Cliente(id=3, nome='Gustavo Gurgel', idade='10', telefone='123456', email='gg@email.com')]
+2025-05-10 18:16:13,182 - root - INFO - Endpoint GET Clientes chamado
+2025-05-10 18:16:13,182 - root - INFO - Leitura do csv.
+2025-05-10 18:16:35,777 - root - INFO - Leitura do csv.
+2025-05-10 18:16:35,777 - root - INFO - Checando se 3 já existe no sistema. 
+2025-05-10 18:16:35,778 - root - DEBUG - (0, 3)
+2025-05-10 18:16:35,778 - root - DEBUG - (1, 3)
+2025-05-10 18:16:35,778 - root - DEBUG - (2, 3)
+2025-05-10 18:16:35,778 - root - INFO - Dado que chegou para ser salvo no CSV: id=3 nome='Gurgel' idade=12 telefone='1231313' email='dadasdad'
+2025-05-10 18:16:35,778 - root - INFO - Arquivo CSV modificado.
+2025-05-10 18:16:35,778 - root - INFO - Novo cliente cadastrado
+2025-05-10 18:16:50,992 - root - INFO - Endpoint GET Clientes chamado
+2025-05-10 18:16:50,992 - root - INFO - Leitura do csv.
+2025-05-10 18:17:00,762 - root - INFO - Endpoint GET Clientes chamado
+2025-05-10 18:17:00,762 - root - INFO - Leitura do csv.
+2025-05-10 18:17:10,424 - root - INFO - Função de chamar chamada para id : 2
+2025-05-10 18:17:10,425 - root - INFO - Leitura do csv.
+2025-05-10 18:17:10,425 - root - DEBUG - Tamanho clientes: 4
+2025-05-10 18:17:10,425 - root - DEBUG - ['0,Gustavo,21,123,gustavo@mail.com', '1,Mário,21,123123,mario@mail.com', '3,Gurgel,12,1231313,dadasdad']
+2025-05-10 18:17:10,425 - root - INFO - CSV mudado
+2025-05-10 18:17:46,135 - root - INFO - Função de atulizar cliente foi chamada para: id=3 nome='Gustavo Gurgel' idade=21 telefone='123456' email='gurgel@gmail.com'
+2025-05-10 18:17:46,136 - root - INFO - Leitura do csv.
+2025-05-10 18:17:46,136 - root - INFO - Checando se cliente de id : 3 existe.
+2025-05-10 18:17:46,136 - root - INFO - Checando se cliente de id : 3 existe.
+2025-05-10 18:17:46,136 - root - INFO - Checando se cliente de id : 3 existe.
+2025-05-10 18:17:46,136 - root - INFO - Cliente encontrado.
+2025-05-10 18:17:46,136 - root - INFO - Clente encontado, chamando a função para alterar csv.
+2025-05-10 18:17:46,136 - root - DEBUG - ['0,Gustavo,21,123,gustavo@mail.com', '1,Mário,21,123123,mario@mail.com', Cliente(id=3, nome='Gustavo Gurgel', idade=21, telefone='123456', email='gurgel@gmail.com')]
+2025-05-10 18:22:53,365 - root - INFO - Endpoint GET Clientes chamado
+2025-05-10 18:22:53,365 - root - INFO - Leitura do csv.
+2025-05-10 18:23:34,137 - root - INFO - Leitura do csv.
+2025-05-10 18:23:34,137 - root - INFO - Checando se 3 já existe no sistema. 
+2025-05-10 18:23:34,137 - root - DEBUG - (0, 3)
+2025-05-10 18:23:34,138 - root - DEBUG - (1, 3)
+2025-05-10 18:23:34,138 - root - INFO - Dado que chegou para ser salvo no CSV: id=3 nome='Gurgel' idade=0 telefone='123231231' email='3131312313'
+2025-05-10 18:23:34,138 - root - INFO - Arquivo CSV modificado.
+2025-05-10 18:23:34,138 - root - INFO - Novo cliente cadastrado
+2025-05-10 18:23:38,898 - root - INFO - Endpoint GET Clientes chamado
+2025-05-10 18:23:38,898 - root - INFO - Leitura do csv.
+2025-05-10 18:24:06,286 - root - INFO - Função de atulizar cliente foi chamada para: id=3 nome='Gustavo Gurgel' idade=21 telefone='12341231321' email='gg@gay.com'
+2025-05-10 18:24:06,286 - root - INFO - Leitura do csv.
+2025-05-10 18:24:06,286 - root - INFO - Checando se cliente de id : 3 existe.
+2025-05-10 18:24:06,286 - root - INFO - Checando se cliente de id : 3 existe.
+2025-05-10 18:24:06,286 - root - INFO - Checando se cliente de id : 3 existe.
+2025-05-10 18:24:06,286 - root - INFO - Cliente encontrado.
+2025-05-10 18:24:06,286 - root - INFO - Clente encontado, chamando a função para alterar csv.
+2025-05-10 18:24:06,286 - root - DEBUG - ['0,Gustavo,21,123,gustavo@mail.com', '1,Mário,21,123123,mario@mail.com', '3,Gustavo Gurgel,21,12341231321, gg@gay.com']
+2025-05-10 18:24:06,287 - root - INFO - CSV mudado
+2025-05-10 18:24:30,314 - root - INFO - Função de chamar chamada para id : 23131
+2025-05-10 18:24:30,315 - root - INFO - Leitura do csv.
+2025-05-10 18:24:30,315 - root - DEBUG - Tamanho clientes: 3
+2025-05-10 18:24:30,315 - root - INFO - Delete nao mudou a lista, id 23131 não encontrado.
+2025-05-10 18:24:36,285 - root - INFO - Função de chamar chamada para id : 23131
+2025-05-10 18:24:36,286 - root - INFO - Leitura do csv.
+2025-05-10 18:24:36,286 - root - DEBUG - Tamanho clientes: 3
+2025-05-10 18:24:36,286 - root - INFO - Delete nao mudou a lista, id 23131 não encontrado.
+2025-05-10 18:27:38,668 - root - INFO - Função de chamar chamada para id : 1312313
+2025-05-10 18:27:38,668 - root - INFO - Leitura do csv.
+2025-05-10 18:27:38,669 - root - DEBUG - Tamanho clientes: 3
+2025-05-10 18:27:38,669 - root - INFO - Delete nao mudou a lista, id 1312313 não encontrado.
+2025-05-10 18:28:06,483 - root - INFO - Função de chamar chamada para id : 1312313
+2025-05-10 18:28:06,484 - root - INFO - Leitura do csv.
+2025-05-10 18:28:06,484 - root - DEBUG - Tamanho clientes: 3
+2025-05-10 18:28:06,484 - root - INFO - Delete nao mudou a lista, id 1312313 não encontrado.
+2025-05-10 18:29:43,224 - root - INFO - Endpoint GET Clientes chamado
+2025-05-10 18:29:43,225 - root - INFO - Leitura do csv.
+2025-05-10 18:29:58,453 - root - INFO - Leitura do csv.
+2025-05-10 18:29:58,454 - root - INFO - Checando se 0 já existe no sistema. 
+2025-05-10 18:29:58,454 - root - DEBUG - (0, 0)
+2025-05-10 18:29:58,454 - root - INFO - ID 0 já existe no sistema. Não é possível cadastrar.
+2025-05-10 18:30:08,090 - root - INFO - Leitura do csv.
+2025-05-10 18:30:08,090 - root - INFO - Checando se 3123 já existe no sistema. 
+2025-05-10 18:30:08,090 - root - DEBUG - (0, 3123)
+2025-05-10 18:30:08,090 - root - DEBUG - (1, 3123)
+2025-05-10 18:30:08,090 - root - DEBUG - (3, 3123)
+2025-05-10 18:30:08,090 - root - INFO - Dado que chegou para ser salvo no CSV: id=3123 nome='string' idade=0 telefone='string' email='string'
+2025-05-10 18:30:08,091 - root - INFO - Arquivo CSV modificado.
+2025-05-10 18:30:08,091 - root - INFO - Novo cliente cadastrado
+2025-05-10 18:30:21,598 - root - INFO - Função de chamar chamada para id : 3123
+2025-05-10 18:30:21,598 - root - INFO - Leitura do csv.
+2025-05-10 18:30:21,598 - root - DEBUG - Tamanho clientes: 4
+2025-05-10 18:30:21,598 - root - DEBUG - ['0,Gustavo,21,123,gustavo@mail.com', '1,Mário,21,123123,mario@mail.com', '3,Gustavo Gurgel,21,12341231321, gg@gay.com']
+2025-05-10 18:30:21,599 - root - INFO - CSV mudado
+2025-05-10 18:30:33,466 - root - INFO - Função de atulizar cliente foi chamada para: id=0 nome='string' idade=0 telefone='string' email='string'
+2025-05-10 18:30:33,466 - root - INFO - Leitura do csv.
+2025-05-10 18:30:33,466 - root - INFO - Checando se cliente de id : 0 existe.
+2025-05-10 18:30:33,466 - root - INFO - Checando se cliente de id : 0 existe.
+2025-05-10 18:30:33,466 - root - INFO - Checando se cliente de id : 0 existe.
+2025-05-10 18:30:33,466 - root - INFO - Cliente de id: 3123 não foi encontrado.
+2025-05-10 18:32:19,082 - root - INFO - Função de atulizar cliente foi chamada para: id=0 nome='string' idade=0 telefone='string' email='string'
+2025-05-10 18:32:19,083 - root - INFO - Leitura do csv.
+2025-05-10 18:32:19,083 - root - INFO - Checando se cliente de id : 0 existe.
+2025-05-10 18:32:19,083 - root - INFO - Checando se cliente de id : 0 existe.
+2025-05-10 18:32:19,083 - root - INFO - Checando se cliente de id : 0 existe.
+2025-05-10 18:32:19,084 - root - INFO - Cliente de id: 3123 não foi encontrado.
+2025-05-10 18:32:27,818 - root - INFO - Leitura do csv.
+2025-05-10 18:32:27,818 - root - INFO - Checando se 0 já existe no sistema. 
+2025-05-10 18:32:27,819 - root - DEBUG - (0, 0)
+2025-05-10 18:32:27,819 - root - INFO - ID 0 já existe no sistema. Não é possível cadastrar.
+2025-05-10 18:32:33,843 - root - INFO - Endpoint GET Clientes chamado
+2025-05-10 18:32:33,843 - root - INFO - Leitura do csv.
+2025-05-10 18:32:46,007 - root - INFO - Leitura do csv.
+2025-05-10 18:32:46,007 - root - INFO - Checando se 123 já existe no sistema. 
+2025-05-10 18:32:46,007 - root - DEBUG - (0, 123)
+2025-05-10 18:32:46,008 - root - DEBUG - (1, 123)
+2025-05-10 18:32:46,008 - root - DEBUG - (3, 123)
+2025-05-10 18:32:46,008 - root - INFO - Dado que chegou para ser salvo no CSV: id=123 nome='string' idade=0 telefone='string' email='string'
+2025-05-10 18:32:46,008 - root - INFO - Arquivo CSV modificado.
+2025-05-10 18:32:46,008 - root - INFO - Novo cliente cadastrado
+2025-05-10 18:32:48,457 - root - INFO - Endpoint GET Clientes chamado
+2025-05-10 18:32:48,457 - root - INFO - Leitura do csv.
+2025-05-10 18:33:05,620 - root - INFO - Função de atulizar cliente foi chamada para: id=21313 nome='string' idade=0 telefone='string' email='string'
+2025-05-10 18:33:05,620 - root - INFO - Leitura do csv.
+2025-05-10 18:33:05,620 - root - INFO - Checando se cliente de id : 21313 existe.
+2025-05-10 18:33:05,620 - root - INFO - Checando se cliente de id : 21313 existe.
+2025-05-10 18:33:05,621 - root - INFO - Checando se cliente de id : 21313 existe.
+2025-05-10 18:33:05,621 - root - INFO - Checando se cliente de id : 21313 existe.
+2025-05-10 18:33:05,621 - root - INFO - Cliente encontrado.
+2025-05-10 18:33:05,621 - root - INFO - Clente encontado, chamando a função para alterar csv.
+2025-05-10 18:33:05,621 - root - DEBUG - ['0,Gustavo,21,123,gustavo@mail.com', '1,Mário,21,123123,mario@mail.com', '3,Gustavo Gurgel,21,12341231321, gg@gay.com', '123,string,0,string, string']
+2025-05-10 18:33:05,622 - root - INFO - CSV mudado
+2025-05-10 18:33:18,396 - root - INFO - Função de chamar chamada para id : 123
+2025-05-10 18:33:18,396 - root - INFO - Leitura do csv.
+2025-05-10 18:33:18,396 - root - DEBUG - Tamanho clientes: 4
+2025-05-10 18:33:18,396 - root - DEBUG - ['0,Gustavo,21,123,gustavo@mail.com', '1,Mário,21,123123,mario@mail.com', '3,Gustavo Gurgel,21,12341231321, gg@gay.com']
+2025-05-10 18:33:18,397 - root - INFO - CSV mudado

@@ -3,6 +3,10 @@
         Criadas as funções write_csv() para cada entidade (em breve unificar em uma unica função)
         Criados os endpoints get e post para animais
 
+10/05 - Alterações
+        Alterei a idade de str para int em models
+        Criação do update de clientes
+        Adição de um raise no delete clientes
 
 TODO
         Clientes serem mostrados em formato JSON
