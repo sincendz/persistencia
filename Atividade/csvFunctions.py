@@ -73,6 +73,7 @@ def write_csv_list(path_index:int,new_list):
                     file.write(f"{id},{nome},{idade},{telefone},{email}\n")
         except Exception as e:
             logging.warning(f"Erro em write client: {e}")
+            
     elif path_index == 1:
         logging.info("CSV ANIMAIS")
         try:
@@ -83,5 +84,20 @@ def write_csv_list(path_index:int,new_list):
                     file.write(f"{id},{nome},{cliente_id},{especie},{raca}\n")
         except Exception as e:
             logging.warning(f"Erro em write animais: {e}")    
-    logging.info("CSV clientes mudou.")
+        logging.info("CSV clientes mudou.")
 
+    elif path_index == 2:
+        logging.info("CSV SERVIÇOS")
+        try:
+            with open(SERVICOS, 'w') as file:
+                file.write('id,nome,cliente_id,animal_id,preco\n')
+                for servico in new_list:
+                    id,nome,cliente_id,animal_id,preco = servico.split(",")
+                    file.write(f"{id},{nome},{cliente_id},{animal_id},{preco}\n")
+        except Exception as e:
+            logging.warning(f"Erro em write serviços: {e}")    
+        logging.info("CSV serviços mudou.")
+    
+    else:
+        logging.info(f"Write csv index de valor {path_index} não existe.")
+        return {"msg" : f"Path index {path_index} não existe."}
