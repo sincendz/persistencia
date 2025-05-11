@@ -10,8 +10,9 @@
 
 11/05 - Alterações
         Tirei o list.pop(0) de cada uma das funções e fiz esse pop no chamada do read_csv()
-        Na endpoint adicionar animal agora checa se id do cliente existe.
-        Comecei o delete de animal, ainda nao finalizado 
+        Na endpoint animal agora checa se id do cliente existe.
+        Delete animal criado.
+        Função write_csv_list agora recebe o path_index e a nova lista
 
 TODO
         Clientes serem mostrados em formato JSON
