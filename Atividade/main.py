@@ -8,6 +8,10 @@ from models import Cliente, Animal, Servico
 app = FastAPI()
 log = Logs() # Instancia o arquivo de logs
 
+CLIENT = 0
+ANIMAL = 1
+SERVICE = 2
+
 
 @app.get("/")
 def root():
@@ -18,7 +22,7 @@ def root():
 @app.get("/client")
 def clientes():
     logging.info("Endpoint GET Clientes chamado.")
-    clients = read_csv(0) # path_index 0 = clientes
+    clients = read_csv(CLIENT) # path_index 0 = clientes
     if len(clients) > 0:
         return clients
     logging.info("Lista de clientes está vazia.")
@@ -27,7 +31,7 @@ def clientes():
 @app.post("/clients")
 def add_client(client:Cliente):
     logging.info("Endpoint POST clientes chamado.")
-    clients = read_csv(0)
+    clients = read_csv(CLIENT)
 
     logging.info(f"Checando se cliente de id: {client.id} já existe no sistema. ")
     for p in clients:
@@ -51,7 +55,7 @@ def add_client(client:Cliente):
 def update_client_by_id(id_client:int, client:Cliente):
     logging.info("Endpoint PUT chamado para clientes.")
     logging.info(f"Função de atulizar cliente foi chamada para: {client}")
-    clients = read_csv(0)
+    clients = read_csv(CLIENT)
     change = False
     new_list = []
     if len(clients) > 0:
@@ -81,7 +85,7 @@ def update_client_by_id(id_client:int, client:Cliente):
 def delete_by_id(id:int):
     logging.info("Endpoint delete chamado para cliente.")
     logging.info(f"Função de chamar chamada para id : {id}")
-    clients = read_csv(0)
+    clients = read_csv(CLIENT)
 
     change = False
     new_list = []
@@ -104,7 +108,7 @@ def delete_by_id(id:int):
 @app.get('/animals/')
 def animals():
     logging.info("Endpoint GET animais chamado")
-    animals = read_csv(1) # path_index 1 = animals
+    animals = read_csv(ANIMAL) # path_index 1 = animals
     if len(animals) > 0:
         return animals
     logging.info("Lista de animais está vazia.")
@@ -147,8 +151,8 @@ def add_animal(animal:Animal):
 @app.put("/animais/{id}")
 def update_animal_by_id(id_animal:int, animal:Animal):
     logging.info(f"Função para alterar animal de id {id_animal} chamada com {animal}")
-    clients = read_csv(0)
-    animals = read_csv(1)
+    clients = read_csv(CLIENT)
+    animals = read_csv(SERVICE)
     new_list = []
     animal_exist = False
     client_exist = False
@@ -188,7 +192,7 @@ def update_animal_by_id(id_animal:int, animal:Animal):
 def delete_animal_by_id(id_animal:int):
     logging.info("Endpoint delete chamado para animais.")
     logging.info(f"Função de deletar animal chamada para id: {id_animal}")
-    animals = read_csv(1)
+    animals = read_csv(ANIMAL)
     new_list = []
     change = False
     
@@ -210,3 +214,147 @@ def delete_animal_by_id(id_animal:int):
     logging.info(f"Animal de id {id_animal} não foi encontrado.")
     raise HTTPException(status_code=404,detail=f"Animal de id {id_animal} não foi encontrado.")
     
+#------------------------------------Serviços--------------------------------------
+@app.get("/service")
+def service():
+    logging.info("Endpoint GET serviços chamado.")
+    services = read_csv(SERVICE)
+    if len(services) > 0:
+        logging.info("Lista de serviços será retornada.")
+        return {'Serviços':services}
+    logging.info("Lista de serviços está vazia.")
+    #raise HTTPException(status_code=204,detail="Lista de serviços está vazia.")
+    return {"msg" :"Lista de serviços vazia."}
+
+@app.post("/service")
+def add_service(service:Servico):
+    logging.info("Endpoint POST de serviço chamado.")
+    
+    clients = read_csv(CLIENT)
+    animals = read_csv(ANIMAL)
+    services = read_csv(SERVICE)
+    
+    service_exist = False
+    animal_exist = False
+    client_exist = False
+      
+    #Checar se id do serviço ja existe
+    for s in services:
+        id_service,_,_,_,_ = s.split(",")
+        if int(id_service) == service.id:
+            logging.info(f"Serviço de id {id_service} já existe.")
+            service_exist = True
+    
+    if service_exist:
+        raise HTTPException(status_code=409,detail=f"Serviço de ID:{service.id} já existe.")
+
+    logging.info(f"Checando se cliente de id {service.cliente_id} existe.")
+    for c in clients:
+        id_client,_,_,_,_ = c.split(",")
+        if int(id_client) == service.cliente_id:
+            client_exist = True
+            logging.info(f"Cliente encontrado.")
+            
+    if client_exist == False:
+        raise HTTPException(status_code=404,detail=f"Cliente de id {service.cliente_id} não foi encontrado.")
+    
+    logging.info(f"Checando se animal de id {service.animal_id} existe.")
+    for a in animals:
+        id_animal,_,_,_,_ = a.split(",")
+        if int(id_animal) == service.animal_id:
+            logging.info("Animal encontrado.")
+            animal_exist = True
+    
+    if animal_exist == False:
+        raise HTTPException(status_code=404,detail=f"Animal de id {service.animal_id} não foi encontrado.")
+    
+    
+    try:
+        logging.info("Salvando seriço no csv.")
+        write_csv_servico(service)
+        logging.info("Serviço salvo.")
+        return {"Serviço cadastrado com sucesso":service}
+    except Exception as e:
+        logging.warning(f"Erro ao salvar no csv : {e}")
+        
+
+@app.put("/service/{id}")
+def update_service_by_id(id_service:int,service:Servico):
+    logging.info("Endpoint put de serviço chamado.")
+    clients = read_csv(CLIENT)
+    animals = read_csv(ANIMAL)
+    services = read_csv(SERVICE)
+    
+    change = False
+    service_exist = False
+    client_exist = False
+        
+    new_list = []
+    
+    logging.info(f"Checando se serviço de id:{id_service} existe.")
+    for s in services:
+        id,_,_,_,_ = s.split(",")
+        if int(id) == id_service:
+            logging.info("Serviço encontrado.")
+            service_exist = True
+            if id_service != service.id:
+                service.id = id_service
+                logging.info("ID passado como parametro tem número diferente de id do objeto. Valor do objeto alterado.")
+            logging.info(f"Checando se cliente de id {service.cliente_id} existe.")
+            for c in clients:
+                id_client,_,_,_,_ = c.split(",")
+                if int(id_client) == service.cliente_id:
+                    logging.info("Cliente encontrado.")
+                    client_exist = True
+                    logging.info(f"Checando se animal de id {service.animal_id} existe.")
+                    for a in animals:
+                        id_animal,_,_,_,_ = a.split(",")
+                        if int(id_animal) == service.animal_id:
+                            logging.info("Animal encontrado.")
+                            new_list.append(f"{service.id},{service.nome},{service.cliente_id},{service.animal_id},{service.preco}")
+                            change = True
+        else:
+            new_list.append(s)
+                
+    if service_exist == False:
+        raise HTTPException(status_code = 404, detail = f"Serviço de id: {id_service} não encontrado.")
+    
+    if client_exist == False:
+        raise HTTPException(status_code = 404, detail=f"Serviço de id {id_service} encontrado. Cliente de id {service.cliente_id} não encontrado.")
+    
+    if change:
+        try:
+            logging.info("Lista de serviços será alterada.")
+            write_csv_list(SERVICE,new_list)
+            logging.info("Lista de serviço alterada.")
+            return {"Lista atualizada":new_list}
+        except Exception as e:
+            pass
+    else:
+        raise HTTPException(status_code = 404, detail=f"Serviço de id {id_service} encontrado. Cliente de id {service.cliente_id} encontrado. Animal de id {service.animal_id} não encontrado.")
+        
+       
+@app.delete("/service/{id}")
+def delete_service_by_id(id_service:int):
+    logging.info("Endpoint delete de serviço chamado.")
+    
+    services = read_csv(SERVICE)
+    new_list = []
+    change = False
+    
+    for s in services:
+        id,_,_,_,_ = s.split(",")
+        if int(id) != id_service:
+            new_list.append(s)
+        else:
+            logging.info(f"Serviço de id {id_service} achado.")
+            change = True
+    if change:
+        try:
+            logging.info("Salvando nova lista de serviços.")    
+            write_csv_list(SERVICE,new_list)
+            return {"Nova lista" : new_list}
+        except Exception as e:
+            raise HTTPException(status_code=500,detail=f"Erro ao salvar no csv: {e}")
+    logging.info(f"Lista de serviços não foi alterada. Serviço de id: {id_service} não foi encontrado.")
+    return {"msg": f"Lista de serviços não foi alterada. Serviço de id: {id_service} não foi encontrado."}
