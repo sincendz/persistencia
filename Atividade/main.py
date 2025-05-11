@@ -20,7 +20,6 @@ def clientes():
     logging.info("Endpoint GET Clientes chamado")
     clientes = read_csv(0) # path_index 0 = clientes
     if len(clientes) > 0:
-        clientes.pop(0)
         return clientes
     logging.info("Lista de clientes está vazia.")
     return "Lista vazia."
@@ -29,8 +28,7 @@ def clientes():
 def add_cliente(cliente:Cliente):
     
     clientes = read_csv(0)
-    clientes.pop(0)
-    
+
     logging.info(f"Checando se {cliente.id} já existe no sistema. ")
     for p in clientes:
         id_csv , _ , _ , _ , _ = p.split(",")
@@ -53,7 +51,6 @@ def add_cliente(cliente:Cliente):
 def update_client_by_id(id_cliente:int, cliente:Cliente):
     logging.info(f"Função de atulizar cliente foi chamada para: {cliente}")
     clientes = read_csv(0)
-    clientes.pop(0)
     change = False
     new_list = []
     if len(clientes) > 0:
@@ -82,7 +79,7 @@ def update_client_by_id(id_cliente:int, cliente:Cliente):
 def delete_by_id(id:int):
     logging.info(f"Função de chamar chamada para id : {id}")
     clientes = read_csv(0)
-    clientes.pop(0)
+
     change = False
     new_list = []
     logging.debug(f"Tamanho clientes: {len(clientes)}")
@@ -106,7 +103,6 @@ def animais():
     logging.info("Endpoint GET Animais chamado")
     animais = read_csv(1) # path_index 1 = animais
     if len(animais) > 0:
-        animais.pop(0)
         return animais
     logging.info("Lista de animais está vazia.")
     return "Lista vazia."
@@ -114,7 +110,8 @@ def animais():
 @app.post('/animais/')
 def add_animal(animal:Animal):
     animais = read_csv(1)
-    animais.pop(0)
+    clientes = read_csv(0)
+    client_exist = False
     
     logging.info(f"Checando se {animal.id} já existe no sistema. ")
     for p in animais:
@@ -124,11 +121,39 @@ def add_animal(animal:Animal):
             logging.info(f"ID {animal.id} já existe no sistema. Não é possível cadastrar.")
             raise HTTPException(status_code=404, detail="ID já existe no sistema")
     
-    try:
-        write_csv_animal(animal)
-        logging.info("Novo animal cadastrado")
-    except Exception as e:
-        logging.warning(f"Erro ao salvar no csv: {e} ")
-        raise HTTPException(status_code=404, detail="Erro ao salvar no csv")
+    #Checar se o id do cliente existe no sistema
+    logging.info(f"Checando se o cliente de ID: {animal.cliente_id} existe no sistema. ")
+    for p in clientes:
+        id_csv , _ , _ , _ , _ = p.split(",")
+        if int(id_csv) == animal.cliente_id:
+            client_exist = True
+            logging.info(f"Cliente de ID: {animal.cliente_id} existe no sistema.")
     
-    return {"msg": "Animal cadastrado com sucesso!", "animal": animal}
+    if client_exist:
+        try:
+            write_csv_animal(animal)
+            logging.info("Novo animal cadastrado")
+        except Exception as e:
+            logging.warning(f"Erro ao salvar no csv: {e} ")
+            raise HTTPException(status_code=404, detail="Erro ao salvar no csv")
+        return {"msg": "Animal cadastrado com sucesso!", "animal": animal}
+    else:
+        logging.info(f"Cliente não existe no sistema, não foi possivel cadastrar animal.")
+        raise HTTPException(status_code=404,detail=f"Cliente de id: {animal.cliente_id} não existe no sistema, não foi possivel cadastrar animal de id: {animal.id}")
+
+@app.delete("/animais/id")
+def delete_animal_by_id(id_animal:int):
+    logging.info(f"Função de deletar animal chamada para id: {id_animal}")
+    animais = read_csv(1)
+    new_list = []
+    change = False
+    
+    for animal in animais:
+        id_csv,_,_,_,_ = animal.split(",")
+        if(int(id_csv) != id_animal ):
+            new_list.append(animal)
+        else:
+            logging.debug(f"Animal de {id_animal} encontrado.")
+            change = True
+    #Vou terminar
+    

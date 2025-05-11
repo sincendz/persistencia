@@ -8,6 +8,11 @@
         Criação do update de clientes
         Adição de um raise no delete clientes
 
+11/05 - Alterações
+        Tirei o list.pop(0) de cada uma das funções e fiz esse pop no chamada do read_csv()
+        Na endpoint adicionar animal agora checa se id do cliente existe.
+        Comecei o delete de animal, ainda nao finalizado 
+
 TODO
         Clientes serem mostrados em formato JSON
         Unificar as funções write_csv()
