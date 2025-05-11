@@ -13,6 +13,7 @@
         Na endpoint animal agora checa se id do cliente existe.
         Delete animal criado.
         Função write_csv_list agora recebe o path_index e a nova lista
+        update animal criada
 
 TODO
         Clientes serem mostrados em formato JSON

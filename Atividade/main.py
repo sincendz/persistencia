@@ -144,7 +144,44 @@ def add_animal(animal:Animal):
 
 @app.put("/animais/id")
 def update_animal_by_id(id_animal:int, animal:Animal):
-    pass
+    logging.info(f"Função para alterar animal de id {id_animal} chamada com {animal}")
+    clientes = read_csv(0)
+    animais = read_csv(1)
+    
+    new_list = []
+    animal_exist = False
+    client_exist = False
+    
+    #Checar se id existe na lista de animais
+    logging.info(f"Checando se {id_animal} existe em {animais}")
+    for a in animais:
+        id_csv,_,_,_,_ = a.split(',')
+        if int(id_csv) == id_animal:
+            logging.info("Animal encontrado!")
+            animal_exist = True
+            if id_animal != animal.id:
+                animal.id = id_animal
+                logging.info(f"ID passado como paramentro {id_animal} é diferente do id do objeto animal. Alteração feita.")
+            #Checar se o ID do Cliente existe
+            for cliente in clientes:
+                logging.info(f"Checando se cliente de id {animal.cliente_id} existe.")
+                id_client,_,_,_,_ = cliente.split(",")
+                if(int(id_client) == animal.cliente_id):
+                    logging.info(f"Cliente de id {animal.cliente_id} encontrado.")
+                    client_exist = True
+                    new_animal = f'{animal.id},{animal.nome},{animal.cliente_id},{animal.especie},{animal.raca}'
+                    new_list.append(new_animal)     
+        else:
+            new_list.append(a)
+    if client_exist:
+        logging.info("Alterações no CSV animais.")
+        write_csv_list(1,new_list)
+        return new_list
+    if animal_exist:
+        logging.info(f"ID do animal existe mas cliente de id {animal.cliente_id} não foi encontrado")
+        raise HTTPException(status_code=404,detail=f"ID do animal existe mas cliente de id {animal.cliente_id} não foi encontrado")
+    logging.info(f"Animal de id {id_animal} não foi encontrado.")
+    raise HTTPException(status_code=404,detail=f"Animal de id {id_animal} não foi encontrado.")  
 
 @app.delete("/animais/id")
 def delete_animal_by_id(id_animal:int):

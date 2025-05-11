@@ -578,3 +578,119 @@
 2025-05-11 13:59:36,214 - root - INFO - Novo animal cadastrado
 2025-05-11 13:59:44,697 - root - INFO - Endpoint GET Clientes chamado
 2025-05-11 13:59:44,697 - root - INFO - Leitura do csv.
+2025-05-11 14:43:19,556 - root - INFO - Endpoint GET Clientes chamado
+2025-05-11 14:43:19,556 - root - INFO - Leitura do csv.
+2025-05-11 14:43:27,920 - root - INFO - Endpoint GET Animais chamado
+2025-05-11 14:43:27,920 - root - INFO - Leitura do csv.
+2025-05-11 14:43:55,852 - root - INFO - Função para alterar animal de id 5 chamada com id=0 nome='string' cliente_id=0 especie='string' raca='string'
+2025-05-11 14:43:55,853 - root - INFO - Leitura do csv.
+2025-05-11 14:43:55,853 - root - INFO - Leitura do csv.
+2025-05-11 14:43:55,853 - root - INFO - Checando se 5 existe em ['0,Floco,0,Gato,Branco', '1,Pandinha,0,Cachorro,Vira lata', '2,Pandinha,0,Cachorro,Vira lata']
+2025-05-11 14:43:55,853 - root - INFO - Animal de id 5 não foi encontrado.
+2025-05-11 14:44:40,655 - root - INFO - Função para alterar animal de id 2 chamada com id=30 nome='Dudu' cliente_id=123 especie='Cachorro' raca='Labrador'
+2025-05-11 14:44:40,656 - root - INFO - Leitura do csv.
+2025-05-11 14:44:40,656 - root - INFO - Leitura do csv.
+2025-05-11 14:44:40,656 - root - INFO - Checando se 2 existe em ['0,Floco,0,Gato,Branco', '1,Pandinha,0,Cachorro,Vira lata', '2,Pandinha,0,Cachorro,Vira lata']
+2025-05-11 14:44:40,656 - root - INFO - Animal encontrado!
+2025-05-11 14:44:40,656 - root - INFO - ID passado como paramentro 2 é diferente do id do objeto animal. Alteração feita.
+2025-05-11 14:44:40,656 - root - INFO - Checando se cliente de id 123 existe.
+2025-05-11 14:44:40,657 - root - INFO - Checando se cliente de id 123 existe.
+2025-05-11 14:44:40,657 - root - INFO - Checando se cliente de id 123 existe.
+2025-05-11 14:44:40,657 - root - INFO - ID do animal existe mas cliente de id 123 não foi encontrado
+2025-05-11 14:45:06,203 - root - INFO - Função para alterar animal de id 2 chamada com id=30 nome='Dudu' cliente_id=2 especie='Cachorro' raca='Labrador'
+2025-05-11 14:45:06,203 - root - INFO - Leitura do csv.
+2025-05-11 14:45:06,203 - root - INFO - Leitura do csv.
+2025-05-11 14:45:06,203 - root - INFO - Checando se 2 existe em ['0,Floco,0,Gato,Branco', '1,Pandinha,0,Cachorro,Vira lata', '2,Pandinha,0,Cachorro,Vira lata']
+2025-05-11 14:45:06,204 - root - INFO - Animal encontrado!
+2025-05-11 14:45:06,204 - root - INFO - ID passado como paramentro 2 é diferente do id do objeto animal. Alteração feita.
+2025-05-11 14:45:06,204 - root - INFO - Checando se cliente de id 2 existe.
+2025-05-11 14:45:06,204 - root - INFO - Checando se cliente de id 2 existe.
+2025-05-11 14:45:06,204 - root - INFO - Checando se cliente de id 2 existe.
+2025-05-11 14:45:06,204 - root - INFO - Cliente de id 2 encontrado.
+2025-05-11 14:45:06,204 - root - INFO - Alterações no CSV animais.
+2025-05-11 14:45:06,204 - root - INFO - Write csv chamado com index = 1 e list = ['0,Floco,0,Gato,Branco', '1,Pandinha,0,Cachorro,Vira lata', '2,Dudu,2,Cachorro,Labrador']
+2025-05-11 14:45:06,204 - root - INFO - CSV ANIMAIS
+2025-05-11 14:45:06,205 - root - INFO - CSV clientes mudou.
+2025-05-11 14:45:36,367 - root - INFO - Função para alterar animal de id 31231 chamada com id=30 nome='Dudu' cliente_id=2 especie='Cachorro' raca='Labrador'
+2025-05-11 14:45:36,367 - root - INFO - Leitura do csv.
+2025-05-11 14:45:36,367 - root - INFO - Leitura do csv.
+2025-05-11 14:45:36,368 - root - INFO - Checando se 31231 existe em ['0,Floco,0,Gato,Branco', '1,Pandinha,0,Cachorro,Vira lata', '2,Dudu,2,Cachorro,Labrador']
+2025-05-11 14:45:36,368 - root - INFO - Animal de id 31231 não foi encontrado.
+2025-05-11 14:46:30,702 - root - INFO - Função para alterar animal de id 2 chamada com id=30 nome='Zeze' cliente_id=2 especie='Cachorro' raca='Labrador'
+2025-05-11 14:46:30,703 - root - INFO - Leitura do csv.
+2025-05-11 14:46:30,703 - root - INFO - Leitura do csv.
+2025-05-11 14:46:30,703 - root - INFO - Checando se 2 existe em ['0,Floco,0,Gato,Branco', '1,Pandinha,0,Cachorro,Vira lata', '2,Dudu,2,Cachorro,Labrador']
+2025-05-11 14:46:30,703 - root - INFO - Animal encontrado!
+2025-05-11 14:46:30,703 - root - INFO - ID passado como paramentro 2 é diferente do id do objeto animal. Alteração feita.
+2025-05-11 14:46:30,703 - root - INFO - Checando se cliente de id 2 existe.
+2025-05-11 14:46:30,704 - root - INFO - Checando se cliente de id 2 existe.
+2025-05-11 14:46:30,704 - root - INFO - Checando se cliente de id 2 existe.
+2025-05-11 14:46:30,704 - root - INFO - Cliente de id 2 encontrado.
+2025-05-11 14:46:30,704 - root - INFO - Alterações no CSV animais.
+2025-05-11 14:46:30,704 - root - INFO - Write csv chamado com index = 1 e list = ['0,Floco,0,Gato,Branco', '1,Pandinha,0,Cachorro,Vira lata', '2,Zeze,2,Cachorro,Labrador']
+2025-05-11 14:46:30,704 - root - INFO - CSV ANIMAIS
+2025-05-11 14:46:30,705 - root - INFO - CSV clientes mudou.
+2025-05-11 14:46:43,880 - root - INFO - Função de deletar animal chamada para id: 2
+2025-05-11 14:46:43,880 - root - INFO - Leitura do csv.
+2025-05-11 14:46:43,881 - root - DEBUG - Animal de 2 encontrado.
+2025-05-11 14:46:43,881 - root - INFO - Delete animais alterou a lista.
+2025-05-11 14:46:43,881 - root - INFO - Write csv chamado com index = 1 e list = ['0,Floco,0,Gato,Branco', '1,Pandinha,0,Cachorro,Vira lata']
+2025-05-11 14:46:43,881 - root - INFO - CSV ANIMAIS
+2025-05-11 14:46:43,881 - root - INFO - CSV clientes mudou.
+2025-05-11 14:46:52,913 - root - INFO - Leitura do csv.
+2025-05-11 14:46:52,913 - root - INFO - Leitura do csv.
+2025-05-11 14:46:52,914 - root - INFO - Checando se 0 já existe no sistema. 
+2025-05-11 14:46:52,914 - root - DEBUG - (0, 0)
+2025-05-11 14:46:52,915 - root - INFO - ID 0 já existe no sistema. Não é possível cadastrar.
+2025-05-11 14:47:11,483 - root - INFO - Leitura do csv.
+2025-05-11 14:47:11,483 - root - INFO - Leitura do csv.
+2025-05-11 14:47:11,483 - root - INFO - Checando se 10 já existe no sistema. 
+2025-05-11 14:47:11,483 - root - DEBUG - (0, 10)
+2025-05-11 14:47:11,484 - root - DEBUG - (1, 10)
+2025-05-11 14:47:11,484 - root - INFO - Checando se o cliente de ID: 1231 existe no sistema. 
+2025-05-11 14:47:11,484 - root - INFO - Cliente não existe no sistema, não foi possivel cadastrar animal.
+2025-05-11 14:47:19,317 - root - INFO - Leitura do csv.
+2025-05-11 14:47:19,317 - root - INFO - Leitura do csv.
+2025-05-11 14:47:19,317 - root - INFO - Checando se 10 já existe no sistema. 
+2025-05-11 14:47:19,317 - root - DEBUG - (0, 10)
+2025-05-11 14:47:19,317 - root - DEBUG - (1, 10)
+2025-05-11 14:47:19,317 - root - INFO - Checando se o cliente de ID: 2 existe no sistema. 
+2025-05-11 14:47:19,318 - root - INFO - Cliente de ID: 2 existe no sistema.
+2025-05-11 14:47:19,318 - root - INFO - Dado que chegou para ser salvo no CSV: id=10 nome='Lulu' cliente_id=2 especie='string' raca='string'
+2025-05-11 14:47:19,318 - root - INFO - Arquivo CSV modificado.
+2025-05-11 14:47:19,318 - root - INFO - Novo animal cadastrado
+2025-05-11 14:47:33,361 - root - INFO - Endpoint GET Animais chamado
+2025-05-11 14:47:33,361 - root - INFO - Leitura do csv.
+2025-05-11 14:47:56,798 - root - INFO - Função para alterar animal de id 10 chamada com id=30 nome='Lulu' cliente_id=31 especie='Cachorro' raca='Labrador'
+2025-05-11 14:47:56,799 - root - INFO - Leitura do csv.
+2025-05-11 14:47:56,799 - root - INFO - Leitura do csv.
+2025-05-11 14:47:56,799 - root - INFO - Checando se 10 existe em ['0,Floco,0,Gato,Branco', '1,Pandinha,0,Cachorro,Vira lata', '10,Lulu,2,string,string']
+2025-05-11 14:47:56,800 - root - INFO - Animal encontrado!
+2025-05-11 14:47:56,800 - root - INFO - ID passado como paramentro 10 é diferente do id do objeto animal. Alteração feita.
+2025-05-11 14:47:56,800 - root - INFO - Checando se cliente de id 31 existe.
+2025-05-11 14:47:56,800 - root - INFO - Checando se cliente de id 31 existe.
+2025-05-11 14:47:56,800 - root - INFO - Checando se cliente de id 31 existe.
+2025-05-11 14:47:56,800 - root - INFO - ID do animal existe mas cliente de id 31 não foi encontrado
+2025-05-11 14:48:03,467 - root - INFO - Função para alterar animal de id 10 chamada com id=30 nome='Lulu' cliente_id=0 especie='Cachorro' raca='Labrador'
+2025-05-11 14:48:03,467 - root - INFO - Leitura do csv.
+2025-05-11 14:48:03,467 - root - INFO - Leitura do csv.
+2025-05-11 14:48:03,467 - root - INFO - Checando se 10 existe em ['0,Floco,0,Gato,Branco', '1,Pandinha,0,Cachorro,Vira lata', '10,Lulu,2,string,string']
+2025-05-11 14:48:03,468 - root - INFO - Animal encontrado!
+2025-05-11 14:48:03,468 - root - INFO - ID passado como paramentro 10 é diferente do id do objeto animal. Alteração feita.
+2025-05-11 14:48:03,468 - root - INFO - Checando se cliente de id 0 existe.
+2025-05-11 14:48:03,468 - root - INFO - Cliente de id 0 encontrado.
+2025-05-11 14:48:03,468 - root - INFO - Checando se cliente de id 0 existe.
+2025-05-11 14:48:03,468 - root - INFO - Checando se cliente de id 0 existe.
+2025-05-11 14:48:03,468 - root - INFO - Alterações no CSV animais.
+2025-05-11 14:48:03,469 - root - INFO - Write csv chamado com index = 1 e list = ['0,Floco,0,Gato,Branco', '1,Pandinha,0,Cachorro,Vira lata', '10,Lulu,0,Cachorro,Labrador']
+2025-05-11 14:48:03,469 - root - INFO - CSV ANIMAIS
+2025-05-11 14:48:03,469 - root - INFO - CSV clientes mudou.
+2025-05-11 14:48:18,400 - root - INFO - Endpoint GET Animais chamado
+2025-05-11 14:48:18,400 - root - INFO - Leitura do csv.
+2025-05-11 14:48:27,539 - root - INFO - Função de deletar animal chamada para id: 10
+2025-05-11 14:48:27,540 - root - INFO - Leitura do csv.
+2025-05-11 14:48:27,540 - root - DEBUG - Animal de 10 encontrado.
+2025-05-11 14:48:27,541 - root - INFO - Delete animais alterou a lista.
+2025-05-11 14:48:27,541 - root - INFO - Write csv chamado com index = 1 e list = ['0,Floco,0,Gato,Branco', '1,Pandinha,0,Cachorro,Vira lata']
+2025-05-11 14:48:27,541 - root - INFO - CSV ANIMAIS
+2025-05-11 14:48:27,541 - root - INFO - CSV clientes mudou.
