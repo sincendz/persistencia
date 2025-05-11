@@ -149,7 +149,6 @@ def update_animal_by_id(id_animal:int, animal:Animal):
     logging.info(f"Função para alterar animal de id {id_animal} chamada com {animal}")
     clients = read_csv(0)
     animals = read_csv(1)
-    
     new_list = []
     animal_exist = False
     client_exist = False
