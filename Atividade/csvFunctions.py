@@ -61,12 +61,27 @@ def write_csv_servico(servico:Servico):
         logging.info("Arquivo CSV modificado.")
 
 
-def write_csv_list_cliente(clientes):
-    logging.debug(clientes)
-    with open(CLIENTES, 'w') as file:
-        file.write('id,nome,idade,telefone,email\n')  # adicionei \n
-        for p in clientes:
-            id,nome,idade,telefone,email = p.split(",")
-            file.write(f"{id},{nome},{idade},{telefone},{email}\n")
-    logging.info("CSV mudado")
+def write_csv_list(path_index:int,new_list):
+    logging.info(f"Write csv chamado com index = {path_index} e list = {new_list}")
+    if path_index == 0:
+        logging.info("CSV CLIENTES")
+        try:
+            with open(CLIENTES, 'w') as file:
+                file.write('id,nome,idade,telefone,email\n')  # adicionei \n
+                for cliente in new_list:
+                    id,nome,idade,telefone,email = cliente.split(",")
+                    file.write(f"{id},{nome},{idade},{telefone},{email}\n")
+        except Exception as e:
+            logging.warning(f"Erro em write client: {e}")
+    elif path_index == 1:
+        logging.info("CSV ANIMAIS")
+        try:
+            with open(ANIMAIS, 'w') as file:
+                file.write('id,nome,cliente_id,especie,raca\n')
+                for animal in new_list:
+                    id,nome,cliente_id,especie,raca = animal.split(",")
+                    file.write(f"{id},{nome},{cliente_id},{especie},{raca}\n")
+        except Exception as e:
+            logging.warning(f"Erro em write animais: {e}")    
+    logging.info("CSV clientes mudou.")
 

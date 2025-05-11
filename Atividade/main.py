@@ -1,7 +1,7 @@
 from instanciaLogs import Logs , logging
 from fastapi import FastAPI,HTTPException
 from pydantic import BaseModel
-from csvFunctions import read_csv,write_csv_cliente,write_csv_animal, write_csv_servico, write_csv_list_cliente
+from csvFunctions import read_csv,write_csv_cliente,write_csv_animal, write_csv_servico, write_csv_list
 from models import Cliente, Animal, Servico
 
 
@@ -62,13 +62,14 @@ def update_client_by_id(id_cliente:int, cliente:Cliente):
                 change = True
                 if id_cliente != int(cliente.id):
                     cliente.id = id_cliente
+                    logging.info(f"ID passado para atualizar {id_cliente} foi diferente de id :{cliente.id} passado na requisição.")
                 cliente_atualizado = f'{cliente.id},{cliente.nome},{cliente.idade},{cliente.telefone}, {cliente.email}'
                 new_list.append(cliente_atualizado)
             else:
                 new_list.append(c)
         if change:
-            logging.info("Clente encontado, chamando a função para alterar csv.")
-            write_csv_list_cliente(new_list)
+            logging.info("Cliente encontado, chamando a função para alterar csv.")
+            write_csv_list(0,new_list)
             return new_list
         else:
             logging.info(f"Cliente de id: {id_cliente} não foi encontrado.")
@@ -91,7 +92,7 @@ def delete_by_id(id:int):
             else:
                 new_list.append(c)
         if change:
-            write_csv_list_cliente(new_list)
+            write_csv_list(0,new_list)
         else:
             logging.info(f"Delete nao mudou a lista, id {id} não encontrado.")  
             raise HTTPException(status_code=404, detail=f"ID {id}, não foi encontrado.")    
@@ -141,6 +142,10 @@ def add_animal(animal:Animal):
         logging.info(f"Cliente não existe no sistema, não foi possivel cadastrar animal.")
         raise HTTPException(status_code=404,detail=f"Cliente de id: {animal.cliente_id} não existe no sistema, não foi possivel cadastrar animal de id: {animal.id}")
 
+@app.put("/animais/id")
+def update_animal_by_id(id_animal:int, animal:Animal):
+    pass
+
 @app.delete("/animais/id")
 def delete_animal_by_id(id_animal:int):
     logging.info(f"Função de deletar animal chamada para id: {id_animal}")
@@ -155,5 +160,14 @@ def delete_animal_by_id(id_animal:int):
         else:
             logging.debug(f"Animal de {id_animal} encontrado.")
             change = True
-    #Vou terminar
+    if change:
+        try:
+            logging.info("Delete animais alterou a lista.")
+            write_csv_list(1,new_list)
+            return new_list
+        except Exception as e:
+            logging.warning(f"Problema ao salvar lista de animais : {e}")
+            raise HTTPException(status_code=404,detail=f'Não foi possivel deletar o animal de id {id_animal}, erro {e}')
+    logging.info(f"Animal de id {id_animal} não foi encontrado.")
+    raise HTTPException(status_code=404,detail=f"Animal de id {id_animal} não foi encontrado.")
     
