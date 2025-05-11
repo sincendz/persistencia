@@ -28,7 +28,9 @@ for p in paths:
                 f.write("id,nome,cliente_id,especie,raca\n")
             if(p == SERVICOS):
                 f.write("id,nome,cliente_id,animal_id,preco\n")
-
+# 0-> Clientes
+# 1-> Animais
+# 2 -> Servicos
 def read_csv(path_index:int):
     path = paths[path_index]
     data = []
@@ -37,6 +39,7 @@ def read_csv(path_index:int):
         lines = file.readlines()
         for line in lines:
             data.append(line.strip())
+    data.pop(0) # Remove o cabeçalho 
     return data
 
 def write_csv_cliente(cliente:Cliente):
