@@ -18,6 +18,8 @@
 	read_csv() atualizado para retornar json se a flag to_json for True
 	Todos os GETs agora retornam JSON
 	Implementado os endpoints de quantidade
+	Criados os endpoints de exportação de arquivo zip
+	Endpoits de filtro por nome, especie e preço criados
 TODO
         
         Unificar as funções write_csv()

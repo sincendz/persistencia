@@ -3,6 +3,8 @@ from pathlib import Path
 from pydantic import BaseModel
 from models import *
 import pandas as pd
+import zipfile
+from fastapi.responses import FileResponse
 
 log = Logs()
 
@@ -15,7 +17,12 @@ CLIENTES = PATH / 'clientes.csv'
 ANIMAIS = PATH / 'animais.csv'
 SERVICOS = PATH / 'servicos.csv'
 
+CLIENTESZIP = PATH / 'clientes.zip'
+ANIMAISZIP = PATH / 'animais.zip'
+SERVICOSZIP = PATH / 'servicos.zip'
+
 paths = [CLIENTES,ANIMAIS,SERVICOS]
+zippaths = [CLIENTESZIP,ANIMAISZIP,SERVICOSZIP]
 
 
 # Checa se o csv existe. Se não, cria com cabeçalho
@@ -32,10 +39,16 @@ for p in paths:
 # 0-> Clientes
 # 1-> Animais
 # 2 -> Servicos
-def read_csv(path_index:int, to_json = False):
+def read_csv(path_index:int, to_json = False, to_zip = False):
     path = paths[path_index]
+    zippath = zippaths[path_index]
+    filenames = ['clientes','animais','servicos']
     data = []
-    if to_json:
+    if to_zip:
+        with zipfile.ZipFile(zippath,'w',zipfile.ZIP_DEFLATED) as file:
+            file.write(path)
+        return FileResponse(path=zippath,filename=filenames[path_index]+'.zip', media_type = 'application/zip')
+    elif to_json:
         df = pd.read_csv(path)
         return df.to_dict(orient='records')
     else:

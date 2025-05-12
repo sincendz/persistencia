@@ -1135,3 +1135,45 @@
 2025-05-12 12:19:29,279 - root - INFO - Endpoint GET serviços chamado.
 2025-05-12 12:19:29,285 - root - INFO - Lista de serviços será retornada.
 2025-05-12 12:20:03,130 - root - INFO - Endpoint GET animais chamado
+2025-05-12 12:20:28,010 - root - INFO - Endpoint GET Clientes chamado.
+2025-05-12 12:30:29,434 - root - INFO - Endpoint GET Clientes chamado.
+2025-05-12 12:30:29,436 - root - INFO - Lista de clientes está vazia.
+2025-05-12 12:30:55,673 - root - INFO - Endpoint GET Clientes chamado.
+2025-05-12 12:31:03,242 - root - INFO - Endpoint GET Clientes chamado.
+2025-05-12 13:55:31,183 - root - INFO - Endpoint GET Clientes chamado.
+2025-05-12 13:55:37,654 - root - INFO - Endpoint GET Clientes chamado.
+2025-05-12 13:58:38,948 - root - INFO - Endpoint GET Clientes chamado.
+2025-05-12 14:00:57,896 - root - INFO - Endpoint GET ZIP animais chamado
+2025-05-12 14:02:16,235 - root - INFO - Endpoint GET ZIP animais chamado
+2025-05-12 14:02:28,998 - root - INFO - Endpoint GET serviços chamado.
+2025-05-12 14:28:58,658 - root - INFO - Endpoint GET serviços chamado.
+2025-05-12 14:28:58,664 - root - INFO - Lista de serviços será retornada.
+2025-05-12 14:29:32,032 - root - INFO - Endpoint GET serviços chamado.
+2025-05-12 14:29:32,038 - root - INFO - Lista de serviços será retornada.
+2025-05-12 14:29:51,511 - root - INFO - Endpoint GET serviços chamado.
+2025-05-12 14:29:51,518 - root - INFO - Lista de serviços será retornada.
+2025-05-12 14:30:15,336 - root - INFO - Endpoint GET serviços chamado.
+2025-05-12 14:30:15,345 - root - INFO - Lista de serviços será retornada.
+2025-05-12 14:31:00,066 - root - INFO - Endpoint GET serviços chamado.
+2025-05-12 14:31:00,072 - root - INFO - Lista de serviços será retornada.
+2025-05-12 14:32:55,453 - root - INFO - Endpoint GET serviços chamado.
+2025-05-12 14:32:55,459 - root - INFO - Lista de serviços será retornada.
+2025-05-12 14:32:57,551 - root - INFO - Endpoint GET serviços chamado.
+2025-05-12 14:32:57,554 - root - INFO - Lista de serviços será retornada.
+2025-05-12 14:34:10,274 - root - INFO - Endpoint GET serviços chamado.
+2025-05-12 14:34:10,276 - root - INFO - Lista de serviços será retornada.
+2025-05-12 14:34:13,182 - root - INFO - Endpoint GET serviços chamado.
+2025-05-12 14:34:13,186 - root - INFO - Lista de serviços será retornada.
+2025-05-12 14:35:25,136 - root - INFO - Endpoint GET serviços chamado.
+2025-05-12 14:35:25,144 - root - INFO - Lista de serviços será retornada.
+2025-05-12 14:35:30,325 - root - INFO - Endpoint GET serviços chamado.
+2025-05-12 14:35:30,328 - root - INFO - Lista de serviços será retornada.
+2025-05-12 14:38:29,367 - root - INFO - Endpoint GET animais chamado
+2025-05-12 14:38:33,972 - root - INFO - Endpoint GET animais chamado
+2025-05-12 14:39:26,259 - root - INFO - Endpoint GET animais chamado
+2025-05-12 14:39:30,743 - root - INFO - Endpoint GET animais chamado
+2025-05-12 14:39:35,907 - root - INFO - Endpoint GET animais chamado
+2025-05-12 14:39:40,246 - root - INFO - Endpoint GET animais chamado
+2025-05-12 14:39:44,161 - root - INFO - Endpoint GET animais chamado
+2025-05-12 14:39:47,774 - root - INFO - Endpoint GET animais chamado
+2025-05-12 14:39:52,044 - root - INFO - Endpoint GET animais chamado

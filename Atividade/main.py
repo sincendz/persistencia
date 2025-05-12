@@ -3,6 +3,7 @@ from fastapi import FastAPI,HTTPException
 from pydantic import BaseModel
 from csvFunctions import read_csv,write_csv_cliente,write_csv_animal, write_csv_servico, write_csv_list
 from models import Cliente, Animal, Servico
+import zipfile as zip
 
 
 app = FastAPI()
@@ -28,6 +29,19 @@ def clientes():
         return {"msg":"Lista vazia."}
     return clients
 
+@app.get("/client/filter/{nome}")
+def clientes(nome:str):
+    logging.info("Endpoint GET Clientes chamado.")
+    clients = read_csv(CLIENT,to_json=True) # path_index 0 = clientes
+    if not clients:
+        logging.info("Lista de clientes está vazia.")
+        return {"msg":"Lista vazia."}
+    
+    filtered_clients = [c for c in clients if c['nome'].capitalize() ==nome.capitalize()]
+    if not filtered_clients:
+        return {'msg':'Nenhuma pessoa encontrada com esse nome'}
+    return filtered_clients
+
 @app.get("/client/qtd")
 def clientes():
     logging.info("Endpoint GET Clientes chamado.")
@@ -36,6 +50,12 @@ def clientes():
         logging.info("Lista de clientes está vazia.")
         return {"msg":"Lista vazia."}
     return {"Quantidade":len(clients)}
+
+@app.get("/client/zip")
+def clientes():
+    logging.info("Endpoint GET ZIP Clientes chamado.")
+    clients = read_csv(CLIENT,to_zip=True) # path_index 0 = clientes
+    return clients
 
 @app.post("/clients")
 def add_client(client:Cliente):
@@ -123,6 +143,20 @@ def animals():
         return {"msg" : "Lista vazia."}
     return animals
 
+@app.get('/animals/filter/{especie}')
+def animals(especie:str):
+    logging.info("Endpoint GET animais chamado")
+    animals = read_csv(ANIMAL,to_json=True) # path_index 1 = animals
+    if not animals:
+        logging.info("Lista de animais está vazia.")
+        return {"msg" : "Lista vazia."}
+    
+    filtered_animals = [a for a in  animals if a['especie'].capitalize()== especie.capitalize()]
+
+    if not filtered_animals:
+        return {'msg': 'Nenhum animal dessa especie encontrado'}
+    return filtered_animals
+
 @app.get('/animals/qtd')
 def animals():
     logging.info("Endpoint GET animais chamado")
@@ -131,6 +165,12 @@ def animals():
         logging.info("Lista de animais está vazia.")
         return {"msg" : "Lista vazia."}
     return {"Quantidade" :len(animals)}
+
+@app.get('/animals/zip')
+def animals():
+    logging.info("Endpoint GET ZIP animais chamado")
+    animals = read_csv(ANIMAL,to_zip=True) # path_index 1 = animals
+    return animals
 
 @app.post('/animais/')
 def add_animal(animal:Animal):
@@ -244,6 +284,20 @@ def service():
     logging.info("Lista de serviços será retornada.")
     return {'Serviços':services}
 
+@app.get("/service/filter/{price}")
+def service(price:float):
+    logging.info("Endpoint GET serviços chamado.")
+    services = read_csv(SERVICE, to_json=True)
+    if not services:
+        logging.info("Lista de serviços está vazia.")
+        return {"msg" :"Lista de serviços vazia."}
+    #raise HTTPException(status_code=204,detail="Lista de serviços está vazia.")
+    logging.info("Lista de serviços será retornada.")
+    filtered_services = [s for s in services if s['preco'] >= price]
+    if not filtered_services:
+        return {'msg':'Nenhum serviço encontrado'}
+    return filtered_services
+
 @app.get("/service/qtd")
 def service():
     logging.info("Endpoint GET serviços chamado.")
@@ -254,6 +308,12 @@ def service():
     #raise HTTPException(status_code=204,detail="Lista de serviços está vazia.")
     logging.info("Lista de serviços será retornada.")
     return {'Quantidade':len(services)}
+
+@app.get("/service/zip")
+def service():
+    logging.info("Endpoint GET serviços chamado.")
+    services = read_csv(SERVICE, to_zip=True)
+    return services
 
 @app.post("/service")
 def add_service(service:Servico):
