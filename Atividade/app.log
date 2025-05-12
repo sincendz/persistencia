@@ -1194,3 +1194,8 @@
 2025-05-12 14:54:24,848 - root - INFO - Arquivo CSV modificado.
 2025-05-12 14:54:24,848 - root - INFO - Novo cliente cadastrado.
 2025-05-12 14:54:28,441 - root - INFO - Endpoint GET Clientes chamado.
+2025-05-12 15:16:22,651 - root - INFO - Endpoint GET animais chamado
+2025-05-12 15:16:30,030 - root - INFO - Endpoint GET serviços chamado.
+2025-05-12 15:16:30,031 - root - INFO - Lista de serviços será retornada.
+2025-05-12 15:16:43,041 - root - INFO - Endpoint GET Clientes chamado.
+2025-05-12 15:18:35,671 - root - INFO - Endpoint GET Clientes chamado.

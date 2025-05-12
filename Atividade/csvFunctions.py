@@ -48,7 +48,7 @@ def read_csv(path_index:int, to_json = False, to_zip = False, to_hash=False):
     if to_hash:
         with open(path,'r') as file:
             return sha256(file.read().encode()).hexdigest()
-    if to_zip:
+    elif to_zip:
         with zipfile.ZipFile(zippath,'w',zipfile.ZIP_DEFLATED) as file:
             file.write(path)
         return FileResponse(path=zippath,filename=filenames[path_index]+'.zip', media_type = 'application/zip')
