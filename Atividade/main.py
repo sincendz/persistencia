@@ -42,6 +42,15 @@ def clientes(nome:str):
         return {'msg':'Nenhuma pessoa encontrada com esse nome'}
     return filtered_clients
 
+@app.get("/client/hash")
+def clientes():
+    logging.info("Endpoint GET Clientes chamado.")
+    clients = read_csv(CLIENT,to_hash=True) # path_index 0 = clientes
+    if not clients:
+        logging.info("Lista de clientes está vazia.")
+        return {"msg":"Lista vazia."}
+    return clients
+
 @app.get("/client/qtd")
 def clientes():
     logging.info("Endpoint GET Clientes chamado.")
@@ -156,6 +165,15 @@ def animals(especie:str):
     if not filtered_animals:
         return {'msg': 'Nenhum animal dessa especie encontrado'}
     return filtered_animals
+
+@app.get('/animals/hash')
+def animals():
+    logging.info("Endpoint GET animais chamado")
+    animals = read_csv(ANIMAL,to_hash=True) # path_index 1 = animals
+    if not animals:
+        logging.info("Lista de animais está vazia.")
+        return {"msg" : "Lista vazia."}
+    return animals
 
 @app.get('/animals/qtd')
 def animals():
@@ -297,6 +315,18 @@ def service(price:float):
     if not filtered_services:
         return {'msg':'Nenhum serviço encontrado'}
     return filtered_services
+
+@app.get("/service/hash")
+def service():
+    logging.info("Endpoint GET serviços chamado.")
+    services = read_csv(SERVICE, to_hash=True)
+    if not services:
+        logging.info("Lista de serviços está vazia.")
+        return {"msg" :"Lista de serviços vazia."}
+    #raise HTTPException(status_code=204,detail="Lista de serviços está vazia.")
+    logging.info("Lista de serviços será retornada.")
+    return services
+
 
 @app.get("/service/qtd")
 def service():

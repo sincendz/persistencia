@@ -20,6 +20,7 @@
 	Implementado os endpoints de quantidade
 	Criados os endpoints de exportação de arquivo zip
 	Endpoits de filtro por nome, especie e preço criados
+	Hash endpoints implementados
 TODO
         
         Unificar as funções write_csv()

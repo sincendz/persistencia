@@ -5,6 +5,7 @@ from models import *
 import pandas as pd
 import zipfile
 from fastapi.responses import FileResponse
+from hashlib import sha256
 
 log = Logs()
 
@@ -39,11 +40,14 @@ for p in paths:
 # 0-> Clientes
 # 1-> Animais
 # 2 -> Servicos
-def read_csv(path_index:int, to_json = False, to_zip = False):
+def read_csv(path_index:int, to_json = False, to_zip = False, to_hash=False):
     path = paths[path_index]
     zippath = zippaths[path_index]
     filenames = ['clientes','animais','servicos']
     data = []
+    if to_hash:
+        with open(path,'r') as file:
+            return sha256(file.read().encode()).hexdigest()
     if to_zip:
         with zipfile.ZipFile(zippath,'w',zipfile.ZIP_DEFLATED) as file:
             file.write(path)
