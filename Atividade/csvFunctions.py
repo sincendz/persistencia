@@ -2,6 +2,7 @@ from instanciaLogs import Logs , logging
 from pathlib import Path
 from pydantic import BaseModel
 from models import *
+import pandas as pd
 
 log = Logs()
 
@@ -31,16 +32,20 @@ for p in paths:
 # 0-> Clientes
 # 1-> Animais
 # 2 -> Servicos
-def read_csv(path_index:int):
+def read_csv(path_index:int, to_json = False):
     path = paths[path_index]
     data = []
-    with open(path, 'r') as file:
-        logging.info("Leitura do csv.")
-        lines = file.readlines()
-        for line in lines:
-            data.append(line.strip())
-    data.pop(0) # Remove o cabeçalho 
-    return data
+    if to_json:
+        df = pd.read_csv(path)
+        return df.to_dict(orient='records')
+    else:
+        with open(path, 'r') as file:
+            logging.info("Leitura do csv.")
+            lines = file.readlines()
+            for line in lines:
+                data.append(line.strip())
+        data.pop(0) # Remove o cabeçalho 
+        return data
 
 def write_csv_cliente(cliente:Cliente):
     logging.info(f"Dado que chegou para ser salvo no CSV: {cliente}")

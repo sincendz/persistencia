@@ -22,11 +22,20 @@ def root():
 @app.get("/client")
 def clientes():
     logging.info("Endpoint GET Clientes chamado.")
-    clients = read_csv(CLIENT) # path_index 0 = clientes
-    if len(clients) > 0:
-        return clients
-    logging.info("Lista de clientes está vazia.")
-    return {"msg":"Lista vazia."}
+    clients = read_csv(CLIENT,to_json=True) # path_index 0 = clientes
+    if not clients:
+        logging.info("Lista de clientes está vazia.")
+        return {"msg":"Lista vazia."}
+    return clients
+
+@app.get("/client/qtd")
+def clientes():
+    logging.info("Endpoint GET Clientes chamado.")
+    clients = read_csv(CLIENT,to_json=True) # path_index 0 = clientes
+    if not clients:
+        logging.info("Lista de clientes está vazia.")
+        return {"msg":"Lista vazia."}
+    return {"Quantidade":len(clients)}
 
 @app.post("/clients")
 def add_client(client:Cliente):
@@ -108,11 +117,20 @@ def delete_by_id(id:int):
 @app.get('/animals/')
 def animals():
     logging.info("Endpoint GET animais chamado")
-    animals = read_csv(ANIMAL) # path_index 1 = animals
-    if len(animals) > 0:
-        return animals
-    logging.info("Lista de animais está vazia.")
-    return {"msg" : "Lista vazia."}
+    animals = read_csv(ANIMAL,to_json=True) # path_index 1 = animals
+    if not animals:
+        logging.info("Lista de animais está vazia.")
+        return {"msg" : "Lista vazia."}
+    return animals
+
+@app.get('/animals/qtd')
+def animals():
+    logging.info("Endpoint GET animais chamado")
+    animals = read_csv(ANIMAL,to_json=True) # path_index 1 = animals
+    if not animals:
+        logging.info("Lista de animais está vazia.")
+        return {"msg" : "Lista vazia."}
+    return {"Quantidade" :len(animals)}
 
 @app.post('/animais/')
 def add_animal(animal:Animal):
@@ -218,13 +236,24 @@ def delete_animal_by_id(id_animal:int):
 @app.get("/service")
 def service():
     logging.info("Endpoint GET serviços chamado.")
-    services = read_csv(SERVICE)
-    if len(services) > 0:
-        logging.info("Lista de serviços será retornada.")
-        return {'Serviços':services}
-    logging.info("Lista de serviços está vazia.")
+    services = read_csv(SERVICE, to_json=True)
+    if not services:
+        logging.info("Lista de serviços está vazia.")
+        return {"msg" :"Lista de serviços vazia."}
     #raise HTTPException(status_code=204,detail="Lista de serviços está vazia.")
-    return {"msg" :"Lista de serviços vazia."}
+    logging.info("Lista de serviços será retornada.")
+    return {'Serviços':services}
+
+@app.get("/service/qtd")
+def service():
+    logging.info("Endpoint GET serviços chamado.")
+    services = read_csv(SERVICE, to_json=True)
+    if not services:
+        logging.info("Lista de serviços está vazia.")
+        return {"msg" :"Lista de serviços vazia."}
+    #raise HTTPException(status_code=204,detail="Lista de serviços está vazia.")
+    logging.info("Lista de serviços será retornada.")
+    return {'Quantidade':len(services)}
 
 @app.post("/service")
 def add_service(service:Servico):

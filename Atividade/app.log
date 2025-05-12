@@ -1096,3 +1096,42 @@
 2025-05-11 18:54:58,462 - root - INFO - Endpoint GET serviÃ§os chamado.
 2025-05-11 18:54:58,463 - root - INFO - Leitura do csv.
 2025-05-11 18:54:58,463 - root - INFO - Lista de serviÃ§os estÃ¡ vazia.
+2025-05-12 12:11:09,043 - root - INFO - Endpoint GET Clientes chamado.
+2025-05-12 12:13:37,415 - root - INFO - Endpoint GET animais chamado
+2025-05-12 12:13:48,014 - root - INFO - Endpoint GET serviços chamado.
+2025-05-12 12:13:48,028 - root - INFO - Lista de serviços está vazia.
+2025-05-12 12:13:50,102 - root - INFO - Endpoint GET serviços chamado.
+2025-05-12 12:13:50,105 - root - INFO - Lista de serviços está vazia.
+2025-05-12 12:14:16,709 - root - INFO - Endpoint POST de serviço chamado.
+2025-05-12 12:14:16,709 - root - INFO - Leitura do csv.
+2025-05-12 12:14:16,710 - root - INFO - Leitura do csv.
+2025-05-12 12:14:16,710 - root - INFO - Leitura do csv.
+2025-05-12 12:14:16,710 - root - INFO - Checando se cliente de id 0 existe.
+2025-05-12 12:14:16,710 - root - INFO - Cliente encontrado.
+2025-05-12 12:14:16,710 - root - INFO - Checando se animal de id 0 existe.
+2025-05-12 12:14:16,710 - root - INFO - Animal encontrado.
+2025-05-12 12:14:16,710 - root - INFO - Salvando seriço no csv.
+2025-05-12 12:14:16,710 - root - INFO - Dado que chegou para ser salvo no CSV: id=0 nome='Tosa' cliente_id=0 animal_id=0 preco=12.4
+2025-05-12 12:14:16,711 - root - INFO - Arquivo CSV modificado.
+2025-05-12 12:14:16,711 - root - INFO - Serviço salvo.
+2025-05-12 12:14:21,631 - root - INFO - Endpoint GET serviços chamado.
+2025-05-12 12:14:21,634 - root - INFO - Lista de serviços será retornada.
+2025-05-12 12:14:45,739 - root - INFO - Endpoint POST de serviço chamado.
+2025-05-12 12:14:45,740 - root - INFO - Leitura do csv.
+2025-05-12 12:14:45,740 - root - INFO - Leitura do csv.
+2025-05-12 12:14:45,740 - root - INFO - Leitura do csv.
+2025-05-12 12:14:45,740 - root - INFO - Checando se cliente de id 0 existe.
+2025-05-12 12:14:45,740 - root - INFO - Cliente encontrado.
+2025-05-12 12:14:45,741 - root - INFO - Checando se animal de id 0 existe.
+2025-05-12 12:14:45,741 - root - INFO - Animal encontrado.
+2025-05-12 12:14:45,741 - root - INFO - Salvando seriço no csv.
+2025-05-12 12:14:45,741 - root - INFO - Dado que chegou para ser salvo no CSV: id=1 nome='Banho' cliente_id=0 animal_id=0 preco=22.5
+2025-05-12 12:14:45,741 - root - INFO - Arquivo CSV modificado.
+2025-05-12 12:14:45,742 - root - INFO - Serviço salvo.
+2025-05-12 12:14:48,737 - root - INFO - Endpoint GET serviços chamado.
+2025-05-12 12:14:48,740 - root - INFO - Lista de serviços será retornada.
+2025-05-12 12:18:13,368 - root - INFO - Endpoint GET Clientes chamado.
+2025-05-12 12:18:19,707 - root - INFO - Endpoint GET Clientes chamado.
+2025-05-12 12:19:29,279 - root - INFO - Endpoint GET serviços chamado.
+2025-05-12 12:19:29,285 - root - INFO - Lista de serviços será retornada.
+2025-05-12 12:20:03,130 - root - INFO - Endpoint GET animais chamado

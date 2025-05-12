@@ -14,8 +14,11 @@
         Delete animal criado.
         Função write_csv_list agora recebe o path_index e a nova lista
         update animal criada
-
+12/05 - Alterações
+	read_csv() atualizado para retornar json se a flag to_json for True
+	Todos os GETs agora retornam JSON
+	Implementado os endpoints de quantidade
 TODO
-        Clientes serem mostrados em formato JSON
+        
         Unificar as funções write_csv()
          
