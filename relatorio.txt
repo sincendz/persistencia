@@ -23,6 +23,7 @@
 	Hash endpoints implementados
 13/05 - Alterações
         Criação dos endpoints de xml para todas as entidades
+        Criação da função xml para processar os xmls
 TODO
         
         Unificar as funções write_csv()
