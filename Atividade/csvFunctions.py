@@ -193,5 +193,4 @@ def xml(index_path:int):
         arvore = ET.ElementTree(servicos)
         arvore.write("xml/servico.xml", encoding="utf-8", xml_declaration=True)
         return FileResponse("xml/servico.xml", media_type="application/xml", filename="servico.xml")
-
     logging.warning(f"Index path chamado nao existe: {index_path}")

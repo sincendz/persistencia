@@ -72,7 +72,7 @@ def cliente_xml():
     try:
         return xml(CLIENT)
     except Exception as e:
-        logging.warning(f"Eroo ao processar o xml de cliente: {e}")
+        logging.warning(f"Erro ao processar o xml de cliente: {e}")
     
 
 @app.post("/clients")
