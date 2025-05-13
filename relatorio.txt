@@ -21,8 +21,6 @@
 	Criados os endpoints de exportação de arquivo zip
 	Endpoits de filtro por nome, especie e preço criados
 	Hash endpoints implementados
-13/05 - Alterações
-        Criação dos endpoints de xml para todas as entidades
 TODO
         
         Unificar as funções write_csv()
