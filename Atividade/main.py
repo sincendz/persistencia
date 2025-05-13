@@ -1,7 +1,7 @@
 from instanciaLogs import Logs , logging
 from fastapi import FastAPI,HTTPException
 from pydantic import BaseModel
-from csvFunctions import read_csv,write_csv_cliente,write_csv_animal, write_csv_servico, write_csv_list
+from csvFunctions import read_csv,write_csv_cliente,write_csv_animal, write_csv_servico, write_csv_list,xml
 from models import Cliente, Animal, Servico
 import zipfile as zip
 
@@ -65,6 +65,15 @@ def clientes():
     logging.info("Endpoint GET ZIP Clientes chamado.")
     clients = read_csv(CLIENT,to_zip=True) # path_index 0 = clientes
     return clients
+
+@app.get("/client/xml")
+def cliente_xml():
+    logging.info("Endpoint GET XML clientes foi chamado.")
+    try:
+        return xml(CLIENT)
+    except Exception as e:
+        logging.warning(f"Eroo ao processar o xml de cliente: {e}")
+    
 
 @app.post("/clients")
 def add_client(client:Cliente):
@@ -183,6 +192,14 @@ def animals():
         logging.info("Lista de animais está vazia.")
         return {"msg" : "Lista vazia."}
     return {"Quantidade" :len(animals)}
+
+@app.get("/animals/xml")
+def animal_xml():
+    logging.info("Endpoint GET XML animais foi chamado.")
+    try:
+        return xml(ANIMAL)
+    except Exception as e:
+        logging.warning(f"Erro ao processar o xml de animal: {e}")
 
 @app.get('/animals/zip')
 def animals():
@@ -344,6 +361,14 @@ def service():
     logging.info("Endpoint GET serviços chamado.")
     services = read_csv(SERVICE, to_zip=True)
     return services
+
+@app.get("/service/xml")
+def servico_xml():
+    logging.info("Endpoint GET XML animais foi chamado.")
+    try:
+        return xml(SERVICE)
+    except Exception as e:
+        logging.warning(f"Erro ao processar o xml de servico: {e}")
 
 @app.post("/service")
 def add_service(service:Servico):

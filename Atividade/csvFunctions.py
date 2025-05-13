@@ -6,6 +6,7 @@ import pandas as pd
 import zipfile
 from fastapi.responses import FileResponse
 from hashlib import sha256
+import xml.etree.ElementTree as ET
 
 log = Logs()
 
@@ -123,3 +124,74 @@ def write_csv_list(path_index:int,new_list):
     else:
         logging.info(f"Write csv index de valor {path_index} não existe.")
         return {"msg" : f"Path index {path_index} não existe."}
+    
+def xml(index_path:int):
+    logging.info(f"Arquivo de xml chamado para path de index: {index_path}")
+    
+    PATH = Path('xml')
+    PATH.mkdir(exist_ok=True)
+    
+    if index_path == 0:
+        logging.info("XML Clientes")
+        clientes = ET.Element("clientes")
+        clients = read_csv(0)
+        for c in clients:
+            id,nome,idade,telefone,email = c.split(",")
+            cli = ET.SubElement(clientes,"cliente")
+            id_cliente = ET.SubElement(cli,"id")
+            id_cliente.text = id
+            nome_cliente = ET.SubElement(cli,"nome")
+            nome_cliente.text = nome
+            idade_cliente = ET.SubElement(cli,"idade")
+            idade_cliente.text = idade
+            telefone_cliente = ET.SubElement(cli,"telefone")
+            telefone_cliente.text = telefone
+            email_cliente = ET.SubElement(cli,"email")
+            email_cliente.text = email 
+        arvore = ET.ElementTree(clientes)
+        arvore.write("xml/clientes.xml", encoding="utf-8", xml_declaration=True)
+        return FileResponse("xml/clientes.xml", media_type="application/xml", filename="clientes.xml")
+    
+    if index_path == 1:
+        logging.info("XML Animais")
+        animais = ET.Element("animais")
+        animals = read_csv(1)
+        for c in animals:
+            id,nome,cliente_id,especie,raca = c.split(",")
+            ani = ET.SubElement(animais,"animal")
+            id_animal = ET.SubElement(ani,"id")
+            id_animal.text = id
+            nome_animal = ET.SubElement(ani,"nome")
+            nome_animal.text = nome
+            cliente_id_animal = ET.SubElement(ani,"cliente_id")
+            cliente_id_animal.text = cliente_id
+            especie_animal = ET.SubElement(ani,"especie")
+            especie_animal.text = especie
+            raca_animal = ET.SubElement(ani,"raca")
+            raca_animal.text = raca 
+        arvore = ET.ElementTree(animais)
+        arvore.write("xml/animais.xml", encoding="utf-8", xml_declaration=True)
+        return FileResponse("xml/animais.xml", media_type="application/xml", filename="animais.xml")
+    
+    if index_path == 2:
+        logging.info("XML serviços")
+        servicos = ET.Element("serviços")
+        services = read_csv(2)
+        for c in services:
+            id,nome,cliente_id,animal_id,preco = c.split(",")
+            serv = ET.SubElement(servicos,"serviço")
+            id_servico = ET.SubElement(serv,"id")
+            id_servico.text = id
+            nome_servico = ET.SubElement(serv,"nome")
+            nome_servico.text = nome
+            cliente_id_servico = ET.SubElement(serv,"cliente_id")
+            cliente_id_servico.text = cliente_id
+            animal_id_servico = ET.SubElement(serv,"animal_id")
+            animal_id_servico.text = animal_id
+            preco_servico = ET.SubElement(serv,"preco")
+            preco_servico.text = preco 
+        arvore = ET.ElementTree(servicos)
+        arvore.write("xml/servico.xml", encoding="utf-8", xml_declaration=True)
+        return FileResponse("xml/servico.xml", media_type="application/xml", filename="servico.xml")
+
+    logging.warning(f"Index path chamado nao existe: {index_path}")
