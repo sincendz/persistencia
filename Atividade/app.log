@@ -1291,3 +1291,58 @@
 2025-05-14 14:12:16,444 - root - INFO - Lista de serviços será retornada.
 2025-05-14 14:12:23,505 - root - INFO - Endpoint GET serviços filtrados por preço chamado.
 2025-05-14 14:12:23,508 - root - INFO - Lista de serviços será retornada.
+2025-05-14 15:48:50,441 - root - INFO - Acesso ao endpoint root.
+2025-05-14 15:49:14,068 - root - INFO - Endpoint GET Clientes chamado.
+2025-05-14 15:50:10,903 - root - INFO - Endpoint GET Clientes chamado.
+2025-05-14 15:52:15,795 - root - INFO - Endpoint GET XML clientes foi chamado.
+2025-05-14 15:52:15,795 - root - INFO - Arquivo de xml chamado para path de index: 0
+2025-05-14 15:52:15,795 - root - INFO - XML Clientes
+2025-05-14 15:52:15,796 - root - INFO - Leitura do csv.
+2025-05-14 15:54:07,546 - root - INFO - Acesso ao endpoint root.
+2025-05-14 15:59:36,838 - root - INFO - Endpoint POST clientes chamado.
+2025-05-14 15:59:36,839 - root - INFO - Leitura do csv.
+2025-05-14 15:59:36,839 - root - INFO - Checando se cliente de id: 10 já existe no sistema. 
+2025-05-14 15:59:36,839 - root - DEBUG - (0, 10)
+2025-05-14 15:59:36,839 - root - DEBUG - (1, 10)
+2025-05-14 15:59:36,839 - root - DEBUG - (2, 10)
+2025-05-14 15:59:36,839 - root - DEBUG - (3, 10)
+2025-05-14 15:59:36,839 - root - INFO - Dado que chegou para ser salvo no CSV: id=10 nome='string' idade=0 telefone='string' email='string'
+2025-05-14 15:59:36,839 - root - INFO - Arquivo CSV modificado.
+2025-05-14 15:59:36,839 - root - INFO - Novo cliente cadastrado.
+2025-05-14 15:59:55,076 - root - INFO - Endpoint delete chamado para cliente.
+2025-05-14 15:59:55,076 - root - INFO - Função de chamar chamada para id : 10
+2025-05-14 15:59:55,076 - root - INFO - Leitura do csv.
+2025-05-14 15:59:55,077 - root - DEBUG - Tamanho clients: 5
+2025-05-14 15:59:55,077 - root - INFO - Write csv chamado com index = 0 e list = ['0,Gustavo,21,123,gustavo@mail.com', '1,Mário,21,123123,mario@mail.com', '2,Maria,21,2222,maria@mail.com', '3,Victor,32,9999123,victor@mail.com']
+2025-05-14 15:59:55,077 - root - INFO - CSV CLIENTES
+2025-05-14 16:06:41,175 - root - INFO - Endpoint POST clientes chamado.
+2025-05-14 16:06:41,176 - root - INFO - Leitura do csv.
+2025-05-14 16:06:41,176 - root - INFO - Checando se cliente de id: 10 já existe no sistema. 
+2025-05-14 16:06:41,176 - root - DEBUG - (0, 10)
+2025-05-14 16:06:41,176 - root - DEBUG - (1, 10)
+2025-05-14 16:06:41,176 - root - DEBUG - (2, 10)
+2025-05-14 16:06:41,177 - root - DEBUG - (3, 10)
+2025-05-14 16:06:41,177 - root - INFO - Dado que chegou para ser salvo no CSV: id=10 nome='string' idade=0 telefone='string' email='string'
+2025-05-14 16:06:41,177 - root - INFO - Arquivo CSV modificado.
+2025-05-14 16:06:41,177 - root - INFO - Novo cliente cadastrado.
+2025-05-14 16:07:07,373 - root - INFO - Leitura do csv.
+2025-05-14 16:07:07,373 - root - INFO - Leitura do csv.
+2025-05-14 16:07:07,374 - root - INFO - Checando se 20 já existe no sistema. 
+2025-05-14 16:07:07,374 - root - DEBUG - (0, 20)
+2025-05-14 16:07:07,374 - root - DEBUG - (1, 20)
+2025-05-14 16:07:07,374 - root - DEBUG - (2, 20)
+2025-05-14 16:07:07,374 - root - INFO - Checando se o cliente de ID: 10 existe no sistema. 
+2025-05-14 16:07:07,374 - root - INFO - Cliente de ID: 10 existe no sistema.
+2025-05-14 16:07:07,374 - root - INFO - Dado que chegou para ser salvo no CSV: id=20 nome='string' cliente_id=10 especie='string' raca='string'
+2025-05-14 16:07:07,375 - root - INFO - Arquivo CSV modificado.
+2025-05-14 16:07:07,375 - root - INFO - Novo animal cadastrado
+2025-05-14 16:07:26,889 - root - INFO - Endpoint GET Clientes chamado.
+2025-05-14 16:07:47,960 - root - INFO - Endpoint GET animais quantidade chamado
+2025-05-14 16:08:01,584 - root - INFO - Endpoint GET ZIP animais chamado
+2025-05-14 16:08:23,085 - root - INFO - Endpoint GET Clientes filtro de idade 21 chamado.
+2025-05-14 16:08:44,998 - root - INFO - Endpoint GET serviços chamado.
+2025-05-14 16:08:44,998 - root - INFO - Lista de serviços será retornada.
+2025-05-14 16:08:59,085 - root - INFO - Endpoint GET XML animais foi chamado.
+2025-05-14 16:08:59,085 - root - INFO - Arquivo de xml chamado para path de index: 2
+2025-05-14 16:08:59,085 - root - INFO - XML serviços
+2025-05-14 16:08:59,086 - root - INFO - Leitura do csv.
