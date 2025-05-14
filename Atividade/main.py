@@ -451,7 +451,7 @@ def service_filter_nome(nome:str):
     logging.info("Endpoint GET serviços filtrados por nome chamado")
     service = read_csv(SERVICE,to_json=True) 
     if not service:
-        logging.info("Lista de animais está vazia.")
+        logging.info("Lista de serviços está vazia.")
         return {"msg" : "Lista vazia."}
     
     filtered_service = [a for a in  service if a['nome'].capitalize()== nome.capitalize()]
