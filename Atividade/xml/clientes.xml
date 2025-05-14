@@ -1,0 +1,2 @@
+<?xml version='1.0' encoding='utf-8'?>
+<clientes><cliente><id>0</id><nome>Gustavo</nome><idade>21</idade><telefone>123</telefone><email>gustavo@mail.com</email></cliente><cliente><id>1</id><nome>Mário</nome><idade>21</idade><telefone>123123</telefone><email>mario@mail.com</email></cliente><cliente><id>2</id><nome>Maria</nome><idade>21</idade><telefone>2222</telefone><email>maria@mail.com</email></cliente><cliente><id>3</id><nome>Victor</nome><idade>32</idade><telefone>9999123</telefone><email>victor@mail.com</email></cliente></clientes>

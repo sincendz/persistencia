@@ -104,7 +104,7 @@ def clientes():
     if not clients:
         logging.info("Lista de clientes está vazia.")
         return {"msg":"Lista vazia."}
-    return clients
+    return {"hash" :clients}
 
 @app.get("/client/qtd")
 def clientes():
@@ -295,7 +295,7 @@ def animals():
     if not animals:
         logging.info("Lista de animais está vazia.")
         return {"msg" : "Lista vazia."}
-    return animals
+    return {"hash":animals}
 
 @app.get('/animals/qtd')
 def animals():
@@ -521,7 +521,7 @@ def service():
         return {"msg" :"Lista de serviços vazia."}
     #raise HTTPException(status_code=204,detail="Lista de serviços está vazia.")
     logging.info("Lista de serviços será retornada.")
-    return services
+    return {"hash" :services}
 
 
 @app.get("/service/qtd")
