@@ -1262,3 +1262,32 @@
 2025-05-13 14:03:33,829 - root - INFO - Endpoint GET XML animais foi chamado.
 2025-05-13 14:03:33,830 - root - INFO - XML Animais
 2025-05-13 14:03:33,830 - root - INFO - Leitura do csv.
+2025-05-14 14:04:03,051 - root - INFO - Acesso ao endpoint root.
+2025-05-14 14:04:15,444 - root - INFO - Endpoint GET Clientes filtro de id 0 chamado.
+2025-05-14 14:04:22,541 - root - INFO - Endpoint GET Clientes filtro de id 120313 chamado.
+2025-05-14 14:04:32,576 - root - INFO - Endpoint GET Clientes filtro de nome Maria chamado.
+2025-05-14 14:04:41,005 - root - INFO - Endpoint GET Clientes filtro de idade 3131 chamado.
+2025-05-14 14:04:46,399 - root - INFO - Endpoint GET Clientes filtro de idade 21 chamado.
+2025-05-14 14:05:22,158 - root - INFO - Endpoint GET Clientes filtro de telefone 123 chamado.
+2025-05-14 14:06:52,022 - root - INFO - Endpoint GET Clientes filtro de telefone 123 chamado.
+2025-05-14 14:08:19,651 - root - INFO - Endpoint GET Clientes filtro de telefone 123 chamado.
+2025-05-14 14:08:19,655 - root - DEBUG - True
+2025-05-14 14:09:00,095 - root - INFO - Endpoint GET Clientes filtro de telefone 123 chamado.
+2025-05-14 14:09:00,103 - root - DEBUG - True
+2025-05-14 14:09:30,616 - root - INFO - Endpoint GET Clientes filtro de email mario@mail.com chamado.
+2025-05-14 14:09:38,010 - root - INFO - Endpoint GET Clientes filtro de email 132 chamado.
+2025-05-14 14:09:52,001 - root - INFO - Endpoint GET Clientes chamado.
+2025-05-14 14:10:00,936 - root - INFO - Endpoint GET animais filtrados por id chamado
+2025-05-14 14:10:22,703 - root - INFO - Endpoint GET animais filtrados por cliente id chamado
+2025-05-14 14:10:27,195 - root - INFO - Endpoint GET animais filtrados por cliente id chamado
+2025-05-14 14:10:47,317 - root - INFO - Endpoint GET serviços chamado.
+2025-05-14 14:10:47,322 - root - INFO - Lista de serviços será retornada.
+2025-05-14 14:11:14,429 - root - INFO - Endpoint GET serviços filtrados por id chamado
+2025-05-14 14:11:27,239 - root - INFO - Endpoint GET serviços filtrados por nome chamado
+2025-05-14 14:11:39,901 - root - INFO - Endpoint GET serviços filtrados por id do cliente chamado
+2025-05-14 14:11:50,290 - root - INFO - Endpoint GET serviços filtrados por id do cliente chamado
+2025-05-14 14:12:05,552 - root - INFO - Endpoint GET serviços filtrados por id  do animal chamado
+2025-05-14 14:12:16,440 - root - INFO - Endpoint GET serviços filtrados por preço chamado.
+2025-05-14 14:12:16,444 - root - INFO - Lista de serviços será retornada.
+2025-05-14 14:12:23,505 - root - INFO - Endpoint GET serviços filtrados por preço chamado.
+2025-05-14 14:12:23,508 - root - INFO - Lista de serviços será retornada.

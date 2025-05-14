@@ -76,7 +76,9 @@ def clientes_filtro_telefone(telefone:str):
         logging.info("Lista de clientes está vazia.")
         return {"msg":"Lista vazia."}
     
-    filtered_clients = [c for c in clients if c['telefone'].capitalize() ==telefone.capitalize()]
+    logging.debug(telefone == '123')
+    
+    filtered_clients = [c for c in clients if str(c['telefone']) ==telefone]
     if not filtered_clients:
         return {'msg':'Nenhuma pessoa encontrada com esse telefone'}
     return filtered_clients
