@@ -29,9 +29,22 @@ def clientes():
         return {"msg":"Lista vazia."}
     return clients
 
-@app.get("/client/filter/{nome}")
-def clientes(nome:str):
-    logging.info("Endpoint GET Clientes chamado.")
+@app.get("/client/filter/id")
+def clientes_filtro_id(id:int):
+    logging.info(f"Endpoint GET Clientes filtro de id {id} chamado.")
+    clients = read_csv(CLIENT,to_json=True) # path_index 0 = clientes
+    if not clients:
+        logging.info("Lista de clientes está vazia.")
+        return {"msg":"Lista vazia."}
+    
+    filtered_clients = [c for c in clients if c['id'] ==id]
+    if not filtered_clients:
+        return {'msg':'Nenhuma pessoa encontrada com esse id'}
+    return filtered_clients
+
+@app.get("/client/filter/nome")
+def clientes_filtro_nome(nome:str):
+    logging.info(f"Endpoint GET Clientes filtro de nome {nome} chamado.")
     clients = read_csv(CLIENT,to_json=True) # path_index 0 = clientes
     if not clients:
         logging.info("Lista de clientes está vazia.")
@@ -41,6 +54,46 @@ def clientes(nome:str):
     if not filtered_clients:
         return {'msg':'Nenhuma pessoa encontrada com esse nome'}
     return filtered_clients
+
+@app.get("/client/filter/idade")
+def clientes_filtro_idade(idade:int):
+    logging.info(f"Endpoint GET Clientes filtro de idade {idade} chamado.")
+    clients = read_csv(CLIENT,to_json=True) # path_index 0 = clientes
+    if not clients:
+        logging.info("Lista de clientes está vazia.")
+        return {"msg":"Lista vazia."}
+    
+    filtered_clients = [c for c in clients if int(c['idade'])==idade]
+    if not filtered_clients:
+        return {'msg':'Nenhuma pessoa encontrada com essa idade'}
+    return filtered_clients
+
+@app.get("/client/filter/telefone")
+def clientes_filtro_telefone(telefone:str):
+    logging.info(f"Endpoint GET Clientes filtro de telefone {telefone} chamado.")
+    clients = read_csv(CLIENT,to_json=True) # path_index 0 = clientes
+    if not clients:
+        logging.info("Lista de clientes está vazia.")
+        return {"msg":"Lista vazia."}
+    
+    filtered_clients = [c for c in clients if c['telefone'].capitalize() ==telefone.capitalize()]
+    if not filtered_clients:
+        return {'msg':'Nenhuma pessoa encontrada com esse telefone'}
+    return filtered_clients
+
+@app.get("/client/filter/email")
+def clientes_filtro_email(email:str):
+    logging.info(f"Endpoint GET Clientes filtro de email {email} chamado.")
+    clients = read_csv(CLIENT,to_json=True) # path_index 0 = clientes
+    if not clients:
+        logging.info("Lista de clientes está vazia.")
+        return {"msg":"Lista vazia."}
+    
+    filtered_clients = [c for c in clients if c['email'].capitalize() ==email.capitalize()]
+    if not filtered_clients:
+        return {'msg':'Nenhuma pessoa encontrada com esse email'}
+    return filtered_clients
+
 
 @app.get("/client/hash")
 def clientes():
@@ -161,9 +214,53 @@ def animals():
         return {"msg" : "Lista vazia."}
     return animals
 
-@app.get('/animals/filter/{especie}')
-def animals(especie:str):
-    logging.info("Endpoint GET animais chamado")
+
+@app.get('/animals/filter/id')
+def animals_filter_id(id:int):
+    logging.info("Endpoint GET animais filtrados por id chamado")
+    animals = read_csv(ANIMAL,to_json=True) # path_index 1 = animals
+    if not animals:
+        logging.info("Lista de animais está vazia.")
+        return {"msg" : "Lista vazia."}
+    
+    filtered_animals = [a for a in  animals if int(a['id']) == id]
+
+    if not filtered_animals:
+        return {'msg': 'Nenhum animal com esse id encontrado'}
+    return filtered_animals
+
+@app.get('/animals/filter/client_id')
+def animals_filter_client_id(client_id:int):
+    logging.info("Endpoint GET animais filtrados por cliente id chamado")
+    animals = read_csv(ANIMAL,to_json=True) # path_index 1 = animals
+    if not animals:
+        logging.info("Lista de animais está vazia.")
+        return {"msg" : "Lista vazia."}
+    
+    filtered_animals = [a for a in  animals if int(a['cliente_id']) == client_id]
+
+    if not filtered_animals:
+        return {'msg': 'Nenhum animal com esse id de cliente encontrado'}
+    return filtered_animals
+
+
+@app.get('/animals/filter/nome')
+def animals_filter_nome(nome:str):
+    logging.info("Endpoint GET animais filtrados por nome chamado")
+    animals = read_csv(ANIMAL,to_json=True) # path_index 1 = animals
+    if not animals:
+        logging.info("Lista de animais está vazia.")
+        return {"msg" : "Lista vazia."}
+    
+    filtered_animals = [a for a in  animals if a['nome'].capitalize()== nome.capitalize()]
+
+    if not filtered_animals:
+        return {'msg': 'Nenhum animal com esse nome encontrado'}
+    return filtered_animals
+
+@app.get('/animals/filter/especie')
+def animals_filter_especie(especie:str):
+    logging.info("Endpoint GET animais filtrados por especie chamado")
     animals = read_csv(ANIMAL,to_json=True) # path_index 1 = animals
     if not animals:
         logging.info("Lista de animais está vazia.")
@@ -175,9 +272,23 @@ def animals(especie:str):
         return {'msg': 'Nenhum animal dessa especie encontrado'}
     return filtered_animals
 
+@app.get('/animals/filter/raca')
+def animals_filter_raca(raca:str):
+    logging.info("Endpoint GET animais filtrado por raça chamado")
+    animals = read_csv(ANIMAL,to_json=True) # path_index 1 = animals
+    if not animals:
+        logging.info("Lista de animais está vazia.")
+        return {"msg" : "Lista vazia."}
+    
+    filtered_animals = [a for a in  animals if a['raca'].capitalize()== raca.capitalize()]
+
+    if not filtered_animals:
+        return {'msg': 'Nenhum animal dessa raca encontrado'}
+    return filtered_animals
+
 @app.get('/animals/hash')
 def animals():
-    logging.info("Endpoint GET animais chamado")
+    logging.info("Endpoint GET animais Hash chamado")
     animals = read_csv(ANIMAL,to_hash=True) # path_index 1 = animals
     if not animals:
         logging.info("Lista de animais está vazia.")
@@ -186,7 +297,7 @@ def animals():
 
 @app.get('/animals/qtd')
 def animals():
-    logging.info("Endpoint GET animais chamado")
+    logging.info("Endpoint GET animais quantidade chamado")
     animals = read_csv(ANIMAL,to_json=True) # path_index 1 = animals
     if not animals:
         logging.info("Lista de animais está vazia.")
@@ -319,9 +430,71 @@ def service():
     logging.info("Lista de serviços será retornada.")
     return {'Serviços':services}
 
-@app.get("/service/filter/{price}")
-def service(price:float):
-    logging.info("Endpoint GET serviços chamado.")
+@app.get('/service/filter/id')
+def service_filter_id(id:int):
+    logging.info("Endpoint GET serviços filtrados por id chamado")
+    service = read_csv(SERVICE,to_json=True)
+    if not service:
+        logging.info("Lista de serviços está vazia.")
+        return {"msg" : "Lista vazia."}
+    try:
+        filtered_service = [a for a in service if int(a['id']) == id]
+    except Exception as e:
+        logging.warning(e)
+
+    if not filtered_service:
+        return {'msg': 'Nenhum serviço para esse id encontrado'}
+    return filtered_service
+
+@app.get('/service/filter/nome')
+def service_filter_nome(nome:str):
+    logging.info("Endpoint GET serviços filtrados por nome chamado")
+    service = read_csv(SERVICE,to_json=True) 
+    if not service:
+        logging.info("Lista de animais está vazia.")
+        return {"msg" : "Lista vazia."}
+    
+    filtered_service = [a for a in  service if a['nome'].capitalize()== nome.capitalize()]
+
+    if not filtered_service:
+        return {'msg': 'Nenhum serviço com esse nome encontrado'}
+    return filtered_service
+
+@app.get('/service/filter/client_id')
+def service_filter_client_id(client_id:int):
+    logging.info("Endpoint GET serviços filtrados por id do cliente chamado")
+    service = read_csv(SERVICE,to_json=True)
+    if not service:
+        logging.info("Lista de serviços está vazia.")
+        return {"msg" : "Lista vazia."}
+    try:
+        filtered_service = [a for a in service if int(a['cliente_id']) == client_id]
+    except Exception as e:
+        logging.warning(e)
+
+    if not filtered_service:
+        return {'msg': 'Nenhum serviço para o id de cliente encontrado'}
+    return filtered_service
+
+@app.get('/service/filter/animal_id')
+def service_filter_animal_id(animal_id:int):
+    logging.info("Endpoint GET serviços filtrados por id  do animal chamado")
+    service = read_csv(SERVICE,to_json=True)
+    if not service:
+        logging.info("Lista de serviços está vazia.")
+        return {"msg" : "Lista vazia."}
+    try:
+        filtered_service = [a for a in service if int(a['animal_id']) == animal_id]
+    except Exception as e:
+        logging.warning(e)
+
+    if not filtered_service:
+        return {'msg': 'Nenhum serviço para o animal desse id  encontrado'}
+    return filtered_service
+
+@app.get("/service/filter/price")
+def service_filter_price(price:float):
+    logging.info("Endpoint GET serviços filtrados por preço chamado.")
     services = read_csv(SERVICE, to_json=True)
     if not services:
         logging.info("Lista de serviços está vazia.")
@@ -332,6 +505,10 @@ def service(price:float):
     if not filtered_services:
         return {'msg':'Nenhum serviço encontrado'}
     return filtered_services
+
+
+
+
 
 @app.get("/service/hash")
 def service():
