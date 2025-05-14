@@ -107,7 +107,7 @@ def update_client_by_id(id_client:int, client:Cliente):
     new_list = []
     if len(clients) > 0:
         for c in clients:
-            logging.info(f"Checando se cliente de id : {client.id} existe.")
+            logging.info(f"Checando se cliente de id : {id_client} existe.")
             id_csv,_,_,_,_ = c.split(",")
             if(int(id_csv) == id_client):
                 logging.info("Cliente encontrado.")
