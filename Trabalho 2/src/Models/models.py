@@ -81,23 +81,25 @@ class Consultation(SQLModel, table=True):
         back_populates="consultations", link_model=ConsultationServiceLink
     )
 
-
-class Veterinary(Person, table=True):
-    id: Optional[int] = Field(default=None, primary_key=True)
+class VeterinaryBase(Person):
     crmv_id: int = Field(foreign_key="crmv.id")
     specialization: Optional[str] = None
+
+class Veterinary(VeterinaryBase, table=True):
+    id: Optional[int] = Field(default=None, primary_key=True)
 
     crmv: Optional["Crmv"] = Relationship(back_populates="veterinary")
     consultations: List["Consultation"] = Relationship(
         back_populates="veterinary"
     )
 
-
-class Crmv(SQLModel, table=True):
-    id: Optional[int] = Field(default=None, primary_key=True)
+class CrmvBase(SQLModel):
     cpf: str
     graduation_institution: str
     year_of_graduation: str
     status: StatusEnum
+
+class Crmv(CrmvBase, table=True):
+    id: Optional[int] = Field(default=None, primary_key=True)
 
     veterinary: Optional["Veterinary"] = Relationship(back_populates="crmv")

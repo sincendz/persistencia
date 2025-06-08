@@ -16,7 +16,7 @@ def read_clients(session : Session = Depends(get_session)):
 def search_client(client_id, session : Session = Depends(get_session)):
     client = session.get(Client, client_id)
     if not client:
-        logging.error('Animal não encontrado.')
+        logging.error('Cliente não encontrado.')
         raise HTTPException(status_code=404, detail="Cliente não existe!")
     logging.info(f'Cliente retornado {client}')
     return client
@@ -71,6 +71,7 @@ def update_client(client_id:int, client: ClientBase,  session : Session = Depend
 def delete_client(client_id : int, session : Session = Depends(get_session)):
     client = session.get(Client, client_id)
     if not client:
+        logging.error('Cliente não encontrado')
         raise HTTPException(status_code=404, detail="Cliente com esse id não existe.")
     session.delete(client)
     session.commit()

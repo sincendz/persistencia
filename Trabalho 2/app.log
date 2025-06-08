@@ -1,3 +1,19 @@
 2025-06-08 08:39:14,507 - root - INFO - Endpoint GET chamado para animais
 2025-06-08 08:40:50,598 - root - INFO - Endpoint GET chamado para animais
 2025-06-08 08:41:15,000 - root - ERROR - Animal não encontrado.
+2025-06-08 10:41:41,482 - root - INFO - Endpoint GET chamado para veterinarios
+2025-06-08 10:43:28,561 - root - ERROR - Veterinário não encontrado.
+2025-06-08 10:57:14,051 - root - ERROR - Veterinário com crmv inválido
+2025-06-08 11:17:40,809 - root - INFO - Endpoint GET chamado para CRMVs
+2025-06-08 11:17:49,335 - root - ERROR - CRMV não encontrado.
+2025-06-08 11:17:55,987 - root - INFO - GET CRMVs com paginação chamado
+2025-06-08 11:18:12,344 - root - INFO - Quantidade de CRMVs chamado
+2025-06-08 11:18:39,451 - root - INFO - CRMV criado year_of_graduation='2009' graduation_institution='UFC' id=1 status=<StatusEnum.ATIVO: 'ativo'> cpf='12345678910'
+2025-06-08 11:18:49,189 - root - INFO - Endpoint GET chamado para CRMVs
+2025-06-08 11:19:42,286 - root - INFO - Veterinário criado age=32 phone_number='88992323232' crmv_id=1 id=1 name='Teste da silva' email='teste@mail.com' specialization='Dentista'
+2025-06-08 11:19:48,258 - root - INFO - Endpoint GET chamado para veterinarios
+2025-06-08 11:20:07,575 - root - ERROR - Veterinário não encontrado
+2025-06-08 11:21:09,454 - root - INFO - Veterinário 1 atualizado: age=32 phone_number='889923232' crmv_id=1 id=1 name='Paulo da silva' email='paulo@mail.com' specialization='Dentista'
+2025-06-08 11:21:15,520 - root - INFO - Endpoint GET chamado para veterinarios
+2025-06-08 11:21:25,681 - root - INFO - Veterinário 1 deletado: age=32 phone_number='889923232' crmv_id=1 id=1 name='Paulo da silva' email='paulo@mail.com' specialization='Dentista' consultations=[]
+2025-06-08 11:21:41,073 - root - INFO - Endpoint GET chamado para veterinarios

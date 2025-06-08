@@ -2,10 +2,12 @@ from fastapi import FastAPI
 from src.routers.client import router as client_router
 from src.routers.animal import router as animal_router
 from src.routers.service import router as service_router
+from src.routers.veterinary import router as veterinary_router
+from src.routers.crmv import router as crmv_router
 from src.core.database import create_db_and_tables
 from src.core.loggingInit import Logs, logging
 
-routs = [client_router,animal_router,service_router]
+routs = [client_router,animal_router,service_router, veterinary_router,crmv_router]
 
 app = FastAPI()
 log = Logs()
