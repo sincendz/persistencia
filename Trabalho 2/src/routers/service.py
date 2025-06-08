@@ -2,6 +2,7 @@ from fastapi import APIRouter , HTTPException , Depends
 from sqlmodel import Session , select
 from src.Models.models import Service, ServiceBase
 from src.core.database import get_session
+import math
 
 router = APIRouter(prefix="/services", tags=["services"])
 
@@ -19,6 +20,25 @@ def search_service(service_id : int, session: Session = Depends(get_session)):
 @router.get("/services_length")
 def length_service(session: Session = Depends(get_session)):
     return {"Quantidade " : len(session.exec(select(Service)).all())}
+
+@router.get("/service/page")
+def service_page(page : int = 1, page_size :int = 10, session : Session = Depends(get_session)):
+    total_services = len(
+        session.exec(
+            select(Service)
+        ).all()
+    )
+    total_pages = math.ceil(total_services / page_size)
+    offset = (page - 1) * page_size
+    data = session.exec(
+        select(Service).offset(offset).limit(page_size)
+    ).all()
+    return{
+        "data" : data,
+        "total_records" : total_services,
+        "total_pages" : total_pages,
+        "current_page" : page
+    }
 
 @router.post("/", response_model=Service)
 def create_service(service:ServiceBase, session: Session = Depends(get_session)):
