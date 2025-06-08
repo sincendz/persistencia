@@ -9,12 +9,17 @@ router = APIRouter(prefix="/clients", tags=["clients"])
 def read_clients(session : Session = Depends(get_session)):
     return session.exec(select(Client)).all()
 
-@router.get("/{client_id}", response_model=Client)
+@router.get("/search/{client_id}", response_model=Client)
 def search_client(client_id, session : Session = Depends(get_session)):
     client = session.get(Client, client_id)
     if not client:
         raise HTTPException(status_code=404, detail="Cliente não existe!")
     return client
+
+@router.get("/clients_length")
+def length_clients(session : Session = Depends(get_session)):
+    return {"Quantidade " : len(session.exec(select(Client)).all())}
+    
 
 @router.post("/", response_model=Client)
 #Client é do tipo person pois a gente nao vai passar o id
