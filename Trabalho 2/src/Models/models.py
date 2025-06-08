@@ -55,13 +55,14 @@ class ConsultationServiceLink(SQLModel, table=True):
     )
 
 
-class Service(SQLModel, table=True):
-    id: Optional[int] = Field(default=None, primary_key=True)
+class ServiceBase(SQLModel):
     service_name: str
     type_service: str
     price: float
     description: str
 
+class Service(ServiceBase, table=True):
+    id: Optional[int] = Field(default=None, primary_key=True)
     consultations: List["Consultation"] = Relationship(
         back_populates="services", link_model=ConsultationServiceLink
     )
