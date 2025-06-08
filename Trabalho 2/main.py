@@ -1,7 +1,10 @@
 from fastapi import FastAPI
 from src.routers.client import router as client_router
 from src.routers.animal import router as animal_router
+from src.routers.service import router as service_router
 from src.core.database import create_db_and_tables
+
+routs = [client_router,animal_router,service_router]
 
 app = FastAPI()
 
@@ -16,5 +19,5 @@ def create_db():
     except Exception as e:
         return {"Erro" : str(e)}
     
-app.include_router(client_router)
-app.include_router(animal_router)
+for rout in routs:
+    app.include_router(rout)    
