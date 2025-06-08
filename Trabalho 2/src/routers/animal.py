@@ -10,6 +10,11 @@ router = APIRouter(prefix="/animals", tags=["animals"])
 def read_animals(session: Session = Depends(get_session)):
     return session.exec(select(Animal)).all()
 
+@router.get("/animals_length")
+def length_animals(session : Session = Depends(get_session)):
+    quantidade = session.exec(select(Animal)).all()
+    return {"Quantidade" : len(quantidade) }
+
 @router.get("/{animal_id}", response_model=Animal)
 def search_animal(animal_id: int, session : Session = Depends(get_session)):
     animal = session.get(Animal, animal_id)
