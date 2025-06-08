@@ -3,6 +3,7 @@ from sqlmodel import Session , select
 from src.Models.models import Animal , AnimalBase
 from src.Models.models import Client
 from src.core.database import get_session
+import math
 
 router = APIRouter(prefix="/animals", tags=["animals"])
 
@@ -21,6 +22,23 @@ def search_animal(animal_id: int, session : Session = Depends(get_session)):
     if not animal:
         raise HTTPException(status_code=404, detail="Animal não encontrado.")
     return animal
+
+@router.get("/animal/page")
+def animal_page(page : int = 1 , page_size:int = 10 , session : Session = Depends(get_session)):
+    total_animals = len(session.exec(
+        select(Animal)
+    ).all())
+    total_pages = math.ceil(total_animals/page_size)
+    offset = (page - 1) * page_size
+    data = session.exec(
+        select(Animal).offset(offset).limit(page_size)
+    ).all()
+    return{
+        "data" : data,
+        "total_records" : total_animals,
+        "total_pages" : total_pages,
+        "current_page" : page
+    }
 
 @router.post("/", response_model=Animal)
 def create_animal(animal:AnimalBase, session : Session = Depends(get_session)):
