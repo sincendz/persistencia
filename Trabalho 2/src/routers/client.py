@@ -3,22 +3,27 @@ from sqlmodel import Session, select
 from src.Models.models import Client , ClientBase
 from src.core.database import get_session
 import math
+import logging
 
 router = APIRouter(prefix="/clients", tags=["clients"])
 
 @router.get("/", response_model=list[Client])
 def read_clients(session : Session = Depends(get_session)):
+    logging.info('Endpoint GET chamado para clientes')
     return session.exec(select(Client)).all()
 
 @router.get("/search/{client_id}", response_model=Client)
 def search_client(client_id, session : Session = Depends(get_session)):
     client = session.get(Client, client_id)
     if not client:
+        logging.error('Animal não encontrado.')
         raise HTTPException(status_code=404, detail="Cliente não existe!")
+    logging.info(f'Cliente retornado {client}')
     return client
 
 @router.get("/clients_length")
 def length_clients(session : Session = Depends(get_session)):
+    logging.info('Quantidade de clientes chamado')
     return {"Quantidade " : len(session.exec(select(Client)).all())}
 
 @router.get("/clients/page")
@@ -29,6 +34,7 @@ def client_page(page:int = 1, page_size:int = 10, session : Session = Depends(ge
     data = session.exec(
         select(Client).offset(offset).limit(page_size)
     ).all()
+    logging.info('GET clientes com paginação chamado')
     return {
         "data" : data,
         "total_records" : total_clients,
@@ -44,18 +50,21 @@ def create_client(client:ClientBase, session : Session = Depends(get_session)):
     session.add(db_client)
     session.commit()
     session.refresh(db_client)
+    logging.info(f'Cliente criado {db_client}')
     return db_client
 
 @router.put("/{client_id}", response_model=Client)
 def update_client(client_id:int, client: ClientBase,  session : Session = Depends(get_session)):
     db_client = session.get(Client,client_id)
     if not db_client:
+        logging.error('Cliente não encontrado')
         raise HTTPException(status_code=404,detail="Cliente não existe.")
     for key , value in client.dict().items():
         setattr(db_client, key, value)
     session.add(db_client)
     session.commit()
     session.refresh(db_client)
+    logging.info(f'Cliente {client_id} atualizado: {db_client}')
     return db_client
     
 @router.delete("/{client_id}")
@@ -65,4 +74,5 @@ def delete_client(client_id : int, session : Session = Depends(get_session)):
         raise HTTPException(status_code=404, detail="Cliente com esse id não existe.")
     session.delete(client)
     session.commit()
+    logging.info(f'Cliente {client_id} deletado: {client}')
     return {"msg" : "Cliente deletado com sucesso!"}

@@ -1,0 +1,3 @@
+2025-06-08 08:39:14,507 - root - INFO - Endpoint GET chamado para animais
+2025-06-08 08:40:50,598 - root - INFO - Endpoint GET chamado para animais
+2025-06-08 08:41:15,000 - root - ERROR - Animal não encontrado.
