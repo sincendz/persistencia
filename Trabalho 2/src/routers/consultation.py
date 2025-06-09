@@ -1,6 +1,6 @@
 from fastapi import APIRouter, Depends, HTTPException
 from sqlmodel import Session, select
-from src.Models.models import Consultation, ConsultationBase, Animal, Veterinary
+from src.Models.models import Consultation, ConsultationBase, Animal, Veterinary , Service
 from src.core.database import get_session
 from datetime import date
 import math
@@ -21,6 +21,20 @@ def search_consultation(consultation_id: int, session: Session = Depends(get_ses
         raise HTTPException(status_code=404, detail="Consulta não encontrada.")
     return consultation
 
+@router.get("/consultation_services/{consultation_id}")
+def consultation_services(consultation_id:int , session : Session = Depends(get_session)):
+    consult = session.get(Consultation,consultation_id)
+    if not consult:
+        raise HTTPException(status_code=404, detail="Consulta não encontrada.")
+    total = 0
+    for service in consult.services:
+        total+=service.price
+    pago = "Não" if consult.data_out == None else "Sim"
+    return {
+        "Serviços" : consult.services,
+        "Preço total" : total,
+        "Pago " : pago
+    }
 
 @router.get("/length_consultation")
 def consultation_length(session: Session = Depends(get_session)):
@@ -40,6 +54,20 @@ def consultation_page(page: int = 1, page_size : int = 10, session : Session = D
         "total_pages" : total_page,
         "current_page" : page
     }
+
+@router.post("/{consultation_id}/add_service/{service_id}", response_model=Consultation)
+def add_service_to_consultation(consultation_id:int, service_id:int, session : Session = Depends(get_session)):
+    consultation = session.get(Consultation,consultation_id)
+    if not consultation:
+        raise HTTPException(status_code=404, detail="Consulta não encontrada.")
+    service = session.get(Service,service_id)
+    if not service:
+        raise HTTPException(status_code=404, detail="Serviço não encontrado.")
+    consultation.services.append(service)
+    session.add(consultation)
+    session.commit()
+    session.refresh(consultation)
+    return consultation
 
 @router.post("/", response_model=Consultation)
 def create_consultation(
