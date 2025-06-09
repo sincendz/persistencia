@@ -23,7 +23,7 @@ def search_consultation(consultation_id: int, session: Session = Depends(get_ses
 
 
 @router.get("/length_consultation")
-def consultation_lenght(session: Session = Depends(get_session)):
+def consultation_length(session: Session = Depends(get_session)):
     return {"Quantidade": len(session.exec(select(Consultation)).all())}
 
 @router.get("/page")
@@ -69,7 +69,7 @@ def update_consultation(
         raise HTTPException(status_code=404, detail="Consulta não encontrada.")
     if db_consultation.data_out != None:
         raise HTTPException(
-            status_code=405,
+            status_code=403,
             detail="Não é possivel alterar uma consulta que já foi encerrada.",
         )
     for key, value in consultation.dict().items():
