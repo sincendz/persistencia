@@ -13,7 +13,7 @@ def read_veterinaries(session : Session = Depends(get_session)):
     return session.exec(select(Veterinary)).all()
 
 @router.get("/search/{veterinary_id}", response_model=Veterinary)
-def search_client(veterinary_id, session : Session = Depends(get_session)):
+def search_veterinary(veterinary_id, session : Session = Depends(get_session)):
     veterinary = session.get(Veterinary, veterinary_id)
     if not veterinary:
         logging.error('Veterinário não encontrado.')
