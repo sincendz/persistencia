@@ -1,4 +1,3 @@
-#from __future__ import annotations ,<- Va se fuder 
 from sqlmodel import SQLModel, Field, Relationship
 from typing import Optional, List
 from datetime import date
@@ -68,13 +67,16 @@ class Service(ServiceBase, table=True):
     )
 
 
-class Consultation(SQLModel, table=True):
-    id: Optional[int] = Field(default=None, primary_key=True)
+class ConsultationBase(SQLModel):
     animal_id: int = Field(foreign_key="animal.id")
     vet_id: int = Field(foreign_key="veterinary.id")
     notes: str
-    # Quem sabe um data-in e data-out
 
+class Consultation(ConsultationBase, table=True):
+    id: Optional[int] = Field(default=None, primary_key=True)
+    data_in: date = Field(default_factory=date.today)
+    updated_at : date = Field(default_factory=date.today)
+    data_out : Optional[date] = Field(default=None)
     animal: Optional["Animal"] = Relationship(back_populates="consultations")
     veterinary: Optional["Veterinary"] = Relationship(back_populates="consultations")
     services: List["Service"] = Relationship(
