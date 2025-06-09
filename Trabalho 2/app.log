@@ -18,3 +18,17 @@
 2025-06-08 11:21:25,681 - root - INFO - Veterinário 1 deletado: age=32 phone_number='889923232' crmv_id=1 id=1 name='Paulo da silva' email='paulo@mail.com' specialization='Dentista' consultations=[]
 2025-06-08 11:21:41,073 - root - INFO - Endpoint GET chamado para veterinarios
 2025-06-09 12:25:48,777 - root - INFO - Endpoint GET chamado para veterinarios
+2025-06-09 14:00:51,586 - root - INFO - Endpoint GET chamado para clientes
+2025-06-09 14:01:12,021 - root - INFO - Cliente criado age=20 name='Mário' email='mario@alu.ufc.br' phone_number='string' id=1
+2025-06-09 14:01:20,616 - root - INFO - Endpoint GET chamado para clientes
+2025-06-09 14:01:30,715 - root - ERROR - Cliente não encontrado.
+2025-06-09 14:01:33,470 - root - INFO - Cliente retornado age=20 name='Mário' email='mario@alu.ufc.br' phone_number='string' id=1
+2025-06-09 14:01:39,354 - root - INFO - Quantidade de clientes chamado
+2025-06-09 14:01:44,722 - root - INFO - GET clientes com paginação chamado
+2025-06-09 14:02:28,455 - root - INFO - Cliente 1 atualizado: age=20 name='Mário' email='mario@alu.ufc.br' phone_number='85996734867' id=1
+2025-06-09 14:02:36,924 - root - INFO - Endpoint GET chamado para animais
+2025-06-09 14:03:19,639 - root - INFO - Animal criado client_id=1 species='Cachorro' id=1 name='Pandinha' age='8 meses' breed='Vira-lata'
+2025-06-09 14:03:35,604 - root - INFO - Animal retornado client_id=1 species='Cachorro' id=1 name='Pandinha' age='8 meses' breed='Vira-lata'
+2025-06-09 14:06:28,945 - root - INFO - Endpoint GET chamado para clientes
+2025-06-09 14:06:43,336 - root - INFO - Cliente criado phone_number='string' id=2 age=21 name='Venicius' email='string'
+2025-06-09 14:06:45,501 - root - INFO - Endpoint GET chamado para clientes
