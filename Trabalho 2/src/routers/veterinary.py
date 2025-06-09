@@ -1,6 +1,6 @@
 from fastapi import APIRouter , Depends , HTTPException
 from sqlmodel import Session, select
-from src.Models.models import Veterinary, VeterinaryBase, Crmv
+from src.Models.models import Veterinary, VeterinaryBase, Crmv , Consultation
 from src.core.database import get_session
 import math
 import logging
@@ -41,6 +41,14 @@ def veterinaries_page(page:int = 1, page_size:int = 10, session : Session = Depe
         "total_pages" : total_pages,
         "current_page": page
     }
+    
+@router.get("/veterinaries/consultations/{veterinary_id}")
+def open_consultations_for_a_vet(veterinary_id:int, session : Session = Depends(get_session)):
+    if not session.get(Veterinary,veterinary_id):
+        raise HTTPException(status_code=404, detail ="Veterinário não encontrado.")
+    return session.exec(
+        select(Consultation).where(Consultation.vet_id == veterinary_id).where(Consultation.data_out == None)
+    ).all()
 
 @router.post("/", response_model=Veterinary)
 def create_veterinary(veterinary:VeterinaryBase, session : Session = Depends(get_session)):
