@@ -26,6 +26,13 @@ def length_clients(session : Session = Depends(get_session)):
     logging.info('Quantidade de clientes chamado')
     return {"Quantidade " : len(session.exec(select(Client)).all())}
 
+@router.get("/all_animals/{client_id}")
+def find_all_client_animals(client_id:int , session : Session = Depends(get_session)):
+    client = session.get(Client,client_id)
+    if not client:
+        raise HTTPException(status_code=404, detail="Cliente não encontrado.")
+    return client.animals
+
 @router.get("/clients/page")
 def client_page(page:int = 1, page_size:int = 10, session : Session = Depends(get_session)):
     total_clients = len(session.exec(select(Client)).all())
