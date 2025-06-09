@@ -53,7 +53,7 @@ def create_crmv(crmv:CrmvBase, session : Session = Depends(get_session)):
 
 @router.put("/{crmv_id}", response_model=Crmv)
 def update_crmv(crmv_id:int, crmv: CrmvBase,  session : Session = Depends(get_session)):
-    db_crmv = session.get(CrmvBase,crmv_id)
+    db_crmv = session.get(Crmv,crmv_id)
     if not db_crmv:
         logging.error('CRMV não encontrado')
         raise HTTPException(status_code=404,detail="CRMV não existe.")
