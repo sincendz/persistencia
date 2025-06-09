@@ -32,3 +32,32 @@
 2025-06-09 14:06:28,945 - root - INFO - Endpoint GET chamado para clientes
 2025-06-09 14:06:43,336 - root - INFO - Cliente criado phone_number='string' id=2 age=21 name='Venicius' email='string'
 2025-06-09 14:06:45,501 - root - INFO - Endpoint GET chamado para clientes
+2025-06-09 14:09:58,550 - root - INFO - Endpoint GET chamado para serviços
+2025-06-09 14:11:01,472 - root - INFO - Serviço criado description='Vacia usada para combater a tuberculose em animais' service_name='Vacina tuberculose' type_service='Atendimento' price=50.0 id=1
+2025-06-09 14:11:17,739 - root - ERROR - Serviço não encontrado
+2025-06-09 14:11:19,980 - root - INFO - Serviço retornado description='Vacia usada para combater a tuberculose em animais' service_name='Vacina tuberculose' type_service='Atendimento' price=50.0 id=1
+2025-06-09 14:12:56,796 - root - INFO - CRMV criado status=<StatusEnum.ATIVO: 'ativo'> cpf='06336936341' graduation_institution='UFC' year_of_graduation='2022.2' id=1
+2025-06-09 14:13:19,444 - root - INFO - Endpoint GET chamado para CRMVs
+2025-06-09 14:13:39,653 - root - ERROR - CRMV não encontrado.
+2025-06-09 14:14:49,746 - root - ERROR - Veterinário com crmv inválido
+2025-06-09 14:15:00,002 - root - INFO - Veterinário criado name='Guilherme Chaves' email='string' specialization='Cirurgia Geral' phone_number='string' age=22 crmv_id=1 id=1
+2025-06-09 14:15:13,324 - root - INFO - Veterinário retornado name='Guilherme Chaves' email='string' specialization='Cirurgia Geral' phone_number='string' age=22 crmv_id=1 id=1
+2025-06-09 14:16:00,798 - root - INFO - Quantidade de veterinários chamado
+2025-06-09 14:29:24,315 - root - INFO - Endpoint GET chamado para clientes
+2025-06-09 14:29:37,926 - root - INFO - Endpoint GET chamado para clientes
+2025-06-09 14:30:25,234 - root - INFO - Endpoint GET chamado para clientes
+2025-06-09 14:30:38,623 - root - INFO - Cliente retornado phone_number='85996734867' id=1 email='mario@alu.ufc.br' age=20 name='Mário'
+2025-06-09 14:30:41,598 - root - INFO - Cliente retornado phone_number='11888888888' id=4 email='maria@email.com' age=28 name='Maria Souza'
+2025-06-09 14:31:10,355 - root - INFO - Quantidade de clientes chamado
+2025-06-09 14:31:26,643 - root - INFO - Endpoint GET chamado para animais
+2025-06-09 14:31:47,043 - root - INFO - Quantidade de animais chamado
+2025-06-09 14:31:56,749 - root - INFO - Endpoint GET chamado para serviços
+2025-06-09 14:32:25,851 - root - INFO - Endpoint GET chamado para CRMVs
+2025-06-09 14:32:41,817 - root - INFO - Endpoint GET chamado para veterinarios
+2025-06-09 14:36:40,205 - root - INFO - Endpoint de deletar veterinário chamado.
+2025-06-09 14:40:39,236 - root - INFO - Endpoint GET chamado para clientes
+2025-06-09 14:40:58,507 - root - INFO - Endpoint GET chamado para veterinarios
+2025-06-09 14:41:14,454 - root - INFO - Endpoint de deletar veterinário chamado.
+2025-06-09 14:41:20,548 - root - INFO - Endpoint GET chamado para veterinarios
+2025-06-09 14:41:31,072 - root - INFO - Endpoint GET chamado para clientes
+2025-06-09 14:42:40,018 - root - INFO - Cliente 2 deletado: phone_number='string' id=2 age=21 name='Venicius' email='string'
