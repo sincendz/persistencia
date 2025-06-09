@@ -22,7 +22,7 @@ def search_consultation(consultation_id: int, session: Session = Depends(get_ses
     return consultation
 
 
-@router.get("/length_consutation")
+@router.get("/length_consultation")
 def consultation_lenght(session: Session = Depends(get_session)):
     return {"Quantidade": len(session.exec(select(Consultation)).all())}
 
