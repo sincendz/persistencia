@@ -12,7 +12,7 @@ def read_services(session : Session = Depends(get_session)):
     logging.info('Endpoint GET chamado para serviços')
     return session.exec(select(Service)).all()
 
-@router.get("/seatch/{service_id}", response_model=Service)
+@router.get("/search/{service_id}", response_model=Service)
 def search_service(service_id : int, session: Session = Depends(get_session)):
     service = session.get(Service,service_id)
     if not service:
@@ -26,7 +26,7 @@ def length_service(session: Session = Depends(get_session)):
     logging.info('Quantidade de serviços chamado')
     return {"Quantidade " : len(session.exec(select(Service)).all())}
 
-@router.get("/service/page")
+@router.get("/services/page")
 def service_page(page : int = 1, page_size :int = 10, session : Session = Depends(get_session)):
     total_services = len(
         session.exec(
