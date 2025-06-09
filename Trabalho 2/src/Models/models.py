@@ -28,7 +28,7 @@ class ClientBase(Person):
 
 
 class AnimalBase(SQLModel):
-    client_id: int = Field(foreign_key="client.id")
+    client_id: Optional[int] = Field(foreign_key="client.id")
     name: str
     age: str
     species: str
