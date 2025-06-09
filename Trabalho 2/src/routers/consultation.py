@@ -55,7 +55,7 @@ def consultation_page(page: int = 1, page_size : int = 10, session : Session = D
         "current_page" : page
     }
 
-@router.post("/{consultation_id}/add_service/{service_id}", response_model=Consultation)
+@router.post("/{consultation_id}/add_service/{service_id}")
 def add_service_to_consultation(consultation_id:int, service_id:int, session : Session = Depends(get_session)):
     consultation = session.get(Consultation,consultation_id)
     if not consultation:
@@ -67,7 +67,9 @@ def add_service_to_consultation(consultation_id:int, service_id:int, session : S
     session.add(consultation)
     session.commit()
     session.refresh(consultation)
-    return consultation
+    return {"Consulta ": consultation,
+        "Serviços" : consultation.services       
+    }
 
 @router.post("/", response_model=Consultation)
 def create_consultation(
