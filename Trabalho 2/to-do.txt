@@ -1,0 +1,2 @@
+Adicionar delete on cascate em crmv/veterinario  e animal/consulta
+Busca por atribuito
