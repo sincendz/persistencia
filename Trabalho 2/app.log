@@ -17,3 +17,4 @@
 2025-06-08 11:21:15,520 - root - INFO - Endpoint GET chamado para veterinarios
 2025-06-08 11:21:25,681 - root - INFO - Veterinário 1 deletado: age=32 phone_number='889923232' crmv_id=1 id=1 name='Paulo da silva' email='paulo@mail.com' specialization='Dentista' consultations=[]
 2025-06-08 11:21:41,073 - root - INFO - Endpoint GET chamado para veterinarios
+2025-06-09 12:25:48,777 - root - INFO - Endpoint GET chamado para veterinarios
