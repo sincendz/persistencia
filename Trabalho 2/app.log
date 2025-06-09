@@ -93,3 +93,14 @@
 2025-06-09 15:53:08,665 - root - INFO - Endpoint GET chamado para CRMVs
 2025-06-09 15:53:37,562 - root - INFO - Veterinário criado age=25 phone_number='string' crmv_id=1 id=1 name='Guilherme' email='string' specialization='Cirurgia Geral'
 2025-06-09 16:47:12,530 - root - INFO - Endpoint GET chamado para serviços
+2025-06-09 17:24:18,220 - root - INFO - Cliente criado phone_number='string' id=2 age=25 email='string' name='Victor'
+2025-06-09 17:24:50,701 - root - INFO - Endpoint GET chamado para animais
+2025-06-09 17:25:43,257 - root - INFO - Animal criado age='20' name='Caramelo' breed='Vira-lata' client_id=2 species='Cachorro' id=4
+2025-06-09 17:25:55,987 - root - INFO - Endpoint GET chamado para serviços
+2025-06-09 17:26:10,759 - root - INFO - Endpoint GET chamado para veterinarios
+2025-06-09 17:26:11,831 - root - INFO - Endpoint GET chamado para veterinarios
+2025-06-09 17:39:13,231 - root - INFO - Endpoint GET chamado para clientes
+2025-06-09 17:39:19,036 - root - INFO - Cliente 2 deletado: phone_number='string' id=2 email='string' age=25 name='Victor'
+2025-06-09 17:39:22,710 - root - INFO - Endpoint GET chamado para clientes
+2025-06-09 17:39:29,903 - root - INFO - Endpoint GET chamado para animais
+2025-06-09 17:40:34,937 - root - INFO - Endpoint GET chamado para veterinarios
