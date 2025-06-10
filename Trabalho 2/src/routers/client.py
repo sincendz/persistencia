@@ -30,7 +30,9 @@ def length_clients(session : Session = Depends(get_session)):
 def find_all_client_animals(client_id:int , session : Session = Depends(get_session)):
     client = session.get(Client,client_id)
     if not client:
+        logging.error('Cliente não encontrado.')
         raise HTTPException(status_code=404, detail="Cliente não encontrado.")
+    logging.info(f'Cliente com animais retornado {client}')
     return client.animals
 
 @router.get("/clients/page")
