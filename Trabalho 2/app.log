@@ -121,3 +121,15 @@
 2025-06-09 21:14:45,905 - root - INFO - Animal criado client_id=1 age='string' breed='string' name='string' species='string' id=1
 2025-06-09 21:14:47,031 - root - INFO - Animal criado client_id=1 age='string' breed='string' name='string' species='string' id=2
 2025-06-09 21:15:35,465 - root - INFO - Animal 2 deletado: client_id=1 age='string' breed='string' name='string' species='string' id=2 consultations=[Consultation(vet_id=1, notes='string', data_in=datetime.date(2025, 6, 9), data_out=None, animal_id=2, id=1, updated_at=datetime.date(2025, 6, 9), services=[]), Consultation(vet_id=1, notes='string', data_in=datetime.date(2025, 6, 9), data_out=None, animal_id=2, id=2, updated_at=datetime.date(2025, 6, 9), services=[]), Consultation(vet_id=1, notes='string', data_in=datetime.date(2025, 6, 9), data_out=None, animal_id=2, id=3, updated_at=datetime.date(2025, 6, 9), services=[]), Consultation(vet_id=1, notes='string', data_in=datetime.date(2025, 6, 9), data_out=None, animal_id=2, id=4, updated_at=datetime.date(2025, 6, 9), animal=Animal(client_id=1, age='string', breed='string', name='string', species='string', id=2, consultations=[...]), services=[])]
+2025-06-09 21:17:47,015 - root - INFO - Endpoint GET chamado para animais
+2025-06-09 21:18:01,460 - root - INFO - Animal 1 deletado: client_id=1 age='string' breed='string' name='string' species='string' id=1 consultations=[]
+2025-06-09 21:18:11,332 - root - INFO - Endpoint GET chamado para animais
+2025-06-09 21:25:07,299 - root - INFO - Animal criado client_id=1 age='string' breed='string' name='string' species='string' id=1
+2025-06-09 21:25:18,781 - root - INFO - Animal criado client_id=1 age='12' breed='string' name='Dogin' species='Vira lata' id=2
+2025-06-09 21:25:33,117 - root - INFO - Animal criado client_id=1 age='12' breed='string' name='Babao' species='Gato' id=3
+2025-06-09 21:25:45,505 - root - INFO - Endpoint GET chamado para animais
+2025-06-09 21:35:00,420 - root - INFO - Endpoint GET chamado para animais
+2025-06-09 21:36:11,638 - root - ERROR - Animais da espécie gato não encontrado
+2025-06-09 21:37:56,224 - root - ERROR - Animais da espécie gato não encontrado
+2025-06-09 21:38:19,946 - root - ERROR - Animais da espécie gato não encontrado
+2025-06-09 21:38:24,200 - root - INFO - Animal retornado [Animal(client_id=1, age='12', breed='string', name='Babao', species='Gato', id=3)]

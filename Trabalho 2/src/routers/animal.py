@@ -28,6 +28,16 @@ def search_animal(animal_id: int, session : Session = Depends(get_session)):
     logging.info(f'Animal retornado {animal}')
     return animal
 
+@router.get("/search/{species}")
+def search_animal_by_species(species: str, session : Session = Depends(get_session)):
+    statement = select(Animal).where(Animal.species==species)
+    animals = session.exec(statement).all()
+    if not animals:
+        logging.error(f'Animais da espécie {species} não encontrado')
+        raise HTTPException(status_code=404, detail=f'Animais da espécie {species} não encontrado')
+    logging.info(f'Animal retornado {animals}')
+    return animals
+
 @router.get("/animal/page")
 def animal_page(page : int = 1 , page_size:int = 10 , session : Session = Depends(get_session)):
     total_animals = len(session.exec(
