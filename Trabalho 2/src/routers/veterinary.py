@@ -45,7 +45,9 @@ def veterinaries_page(page:int = 1, page_size:int = 10, session : Session = Depe
 @router.get("/veterinaries/consultations/{veterinary_id}")
 def open_consultations_for_a_vet(veterinary_id:int, session : Session = Depends(get_session)):
     if not session.get(Veterinary,veterinary_id):
+        logging.error('Veterinário não encontrado.')
         raise HTTPException(status_code=404, detail ="Veterinário não encontrado.")
+    logging.info(f'Retornado as consultas com o veterinário {veterinary_id}')
     return session.exec(
         select(Consultation).where(Consultation.vet_id == veterinary_id).where(Consultation.data_out == None)
     ).all()
