@@ -133,3 +133,135 @@
 2025-06-09 21:37:56,224 - root - ERROR - Animais da espécie gato não encontrado
 2025-06-09 21:38:19,946 - root - ERROR - Animais da espécie gato não encontrado
 2025-06-09 21:38:24,200 - root - INFO - Animal retornado [Animal(client_id=1, age='12', breed='string', name='Babao', species='Gato', id=3)]
+2025-06-10 20:11:23,039 - root - INFO - Endpoint GET chamado para clientes
+2025-06-10 20:11:23,044 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-06-10 20:11:23,118 - sqlalchemy.engine.Engine - INFO - SELECT client.name, client.age, client.phone_number, client.email, client.id 
+FROM client
+2025-06-10 20:11:23,118 - sqlalchemy.engine.Engine - INFO - [generated in 0.00040s] ()
+2025-06-10 20:11:23,120 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-06-10 20:12:41,870 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-06-10 20:12:41,872 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("client")
+2025-06-10 20:12:41,872 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2025-06-10 20:12:41,873 - sqlalchemy.engine.Engine - INFO - PRAGMA temp.table_info("client")
+2025-06-10 20:12:41,874 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2025-06-10 20:12:41,874 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("animal")
+2025-06-10 20:12:41,875 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2025-06-10 20:12:41,875 - sqlalchemy.engine.Engine - INFO - PRAGMA temp.table_info("animal")
+2025-06-10 20:12:41,876 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2025-06-10 20:12:41,876 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("consultationservicelink")
+2025-06-10 20:12:41,876 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2025-06-10 20:12:41,877 - sqlalchemy.engine.Engine - INFO - PRAGMA temp.table_info("consultationservicelink")
+2025-06-10 20:12:41,877 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2025-06-10 20:12:41,878 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("service")
+2025-06-10 20:12:41,878 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2025-06-10 20:12:41,878 - sqlalchemy.engine.Engine - INFO - PRAGMA temp.table_info("service")
+2025-06-10 20:12:41,879 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2025-06-10 20:12:41,879 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("consultation")
+2025-06-10 20:12:41,879 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2025-06-10 20:12:41,880 - sqlalchemy.engine.Engine - INFO - PRAGMA temp.table_info("consultation")
+2025-06-10 20:12:41,880 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2025-06-10 20:12:41,882 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("veterinary")
+2025-06-10 20:12:41,883 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2025-06-10 20:12:41,884 - sqlalchemy.engine.Engine - INFO - PRAGMA temp.table_info("veterinary")
+2025-06-10 20:12:41,885 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2025-06-10 20:12:41,885 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("crmv")
+2025-06-10 20:12:41,886 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2025-06-10 20:12:41,888 - sqlalchemy.engine.Engine - INFO - PRAGMA temp.table_info("crmv")
+2025-06-10 20:12:41,889 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2025-06-10 20:12:41,891 - sqlalchemy.engine.Engine - INFO - 
+CREATE TABLE client (
+	name VARCHAR NOT NULL, 
+	age INTEGER NOT NULL, 
+	phone_number VARCHAR NOT NULL, 
+	email VARCHAR NOT NULL, 
+	id INTEGER NOT NULL, 
+	PRIMARY KEY (id)
+)
+
+
+2025-06-10 20:12:41,892 - sqlalchemy.engine.Engine - INFO - [no key 0.00049s] ()
+2025-06-10 20:12:41,909 - sqlalchemy.engine.Engine - INFO - 
+CREATE TABLE service (
+	service_name VARCHAR NOT NULL, 
+	type_service VARCHAR NOT NULL, 
+	price FLOAT NOT NULL, 
+	description VARCHAR NOT NULL, 
+	id INTEGER NOT NULL, 
+	PRIMARY KEY (id)
+)
+
+
+2025-06-10 20:12:41,910 - sqlalchemy.engine.Engine - INFO - [no key 0.00095s] ()
+2025-06-10 20:12:41,928 - sqlalchemy.engine.Engine - INFO - 
+CREATE TABLE crmv (
+	cpf VARCHAR NOT NULL, 
+	graduation_institution VARCHAR NOT NULL, 
+	year_of_graduation VARCHAR NOT NULL, 
+	status VARCHAR(8) NOT NULL, 
+	id INTEGER NOT NULL, 
+	PRIMARY KEY (id)
+)
+
+
+2025-06-10 20:12:41,928 - sqlalchemy.engine.Engine - INFO - [no key 0.00031s] ()
+2025-06-10 20:12:41,944 - sqlalchemy.engine.Engine - INFO - 
+CREATE TABLE animal (
+	client_id INTEGER, 
+	name VARCHAR NOT NULL, 
+	age VARCHAR NOT NULL, 
+	species VARCHAR NOT NULL, 
+	breed VARCHAR NOT NULL, 
+	id INTEGER NOT NULL, 
+	PRIMARY KEY (id), 
+	FOREIGN KEY(client_id) REFERENCES client (id)
+)
+
+
+2025-06-10 20:12:41,945 - sqlalchemy.engine.Engine - INFO - [no key 0.00037s] ()
+2025-06-10 20:12:41,962 - sqlalchemy.engine.Engine - INFO - 
+CREATE TABLE veterinary (
+	name VARCHAR NOT NULL, 
+	age INTEGER NOT NULL, 
+	phone_number VARCHAR NOT NULL, 
+	email VARCHAR NOT NULL, 
+	crmv_id INTEGER NOT NULL, 
+	specialization VARCHAR, 
+	id INTEGER NOT NULL, 
+	PRIMARY KEY (id), 
+	FOREIGN KEY(crmv_id) REFERENCES crmv (id)
+)
+
+
+2025-06-10 20:12:41,962 - sqlalchemy.engine.Engine - INFO - [no key 0.00046s] ()
+2025-06-10 20:12:41,980 - sqlalchemy.engine.Engine - INFO - 
+CREATE TABLE consultation (
+	animal_id INTEGER NOT NULL, 
+	vet_id INTEGER NOT NULL, 
+	notes VARCHAR NOT NULL, 
+	id INTEGER NOT NULL, 
+	data_in DATE NOT NULL, 
+	updated_at DATE NOT NULL, 
+	data_out DATE, 
+	PRIMARY KEY (id), 
+	FOREIGN KEY(animal_id) REFERENCES animal (id), 
+	FOREIGN KEY(vet_id) REFERENCES veterinary (id)
+)
+
+
+2025-06-10 20:12:41,981 - sqlalchemy.engine.Engine - INFO - [no key 0.00104s] ()
+2025-06-10 20:12:41,998 - sqlalchemy.engine.Engine - INFO - 
+CREATE TABLE consultationservicelink (
+	consultation_id INTEGER NOT NULL, 
+	service_id INTEGER NOT NULL, 
+	PRIMARY KEY (consultation_id, service_id), 
+	FOREIGN KEY(consultation_id) REFERENCES consultation (id), 
+	FOREIGN KEY(service_id) REFERENCES service (id)
+)
+
+
+2025-06-10 20:12:41,998 - sqlalchemy.engine.Engine - INFO - [no key 0.00049s] ()
+2025-06-10 20:12:42,014 - sqlalchemy.engine.Engine - INFO - COMMIT
+2025-06-10 20:14:05,194 - root - INFO - Endpoint GET chamado para clientes
+2025-06-10 20:14:44,440 - root - INFO - Endpoint GET chamado para clientes
+2025-06-10 20:16:54,853 - root - INFO - Endpoint GET chamado para clientes
+2025-06-10 20:18:01,336 - root - INFO - Endpoint GET chamado para clientes
