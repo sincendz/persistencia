@@ -1,6 +1,6 @@
 from fastapi import APIRouter , Depends , HTTPException
 from sqlmodel import Session , select
-from src.Models.models import Animal , AnimalBase
+from src.Models.models import Animal , AnimalBase, Consultation
 from src.Models.models import Client
 from src.core.database import get_session
 import math
@@ -81,7 +81,14 @@ def delete_animal(animal_id : int, session : Session = Depends(get_session)):
     if not animal:
         logging.error('Animal não encontrado')
         raise HTTPException(status_code=404, detail="Animal não encontrado!")
+    
+    statement = select(Consultation).where(Consultation.animal_id==animal_id)
+    consultations = session.exec(statement).all()
+    for c in consultations:
+        session.delete(c)
+
     session.delete(animal)
+    
     session.commit()
     logging.info(f'Animal {animal_id} deletado: {animal}')
     return {"msg" : "Animal deletado."}

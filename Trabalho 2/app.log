@@ -104,3 +104,20 @@
 2025-06-09 17:39:22,710 - root - INFO - Endpoint GET chamado para clientes
 2025-06-09 17:39:29,903 - root - INFO - Endpoint GET chamado para animais
 2025-06-09 17:40:34,937 - root - INFO - Endpoint GET chamado para veterinarios
+2025-06-09 20:50:57,534 - root - INFO - Endpoint GET chamado para animais
+2025-06-09 20:51:09,167 - root - ERROR - Animal com dono inválido
+2025-06-09 20:51:10,875 - root - ERROR - Animal com dono inválido
+2025-06-09 20:51:19,958 - root - INFO - Endpoint GET chamado para clientes
+2025-06-09 20:51:28,094 - root - INFO - Cliente criado email='string' name='string' age=0 phone_number='string' id=1
+2025-06-09 20:51:44,036 - root - INFO - Animal criado client_id=1 age='string' breed='string' name='string' species='string' id=1
+2025-06-09 20:52:08,179 - root - ERROR - Veterinário com crmv inválido
+2025-06-09 20:52:17,390 - root - INFO - CRMV criado cpf='string' status=<StatusEnum.ATIVO: 'ativo'> year_of_graduation='string' graduation_institution='string' id=2
+2025-06-09 20:52:28,192 - root - INFO - Veterinário criado name='string' email='string' specialization='string' age=0 phone_number='string' crmv_id=1 id=1
+2025-06-09 20:56:41,677 - root - INFO - Cliente criado email='string' name='string' age=0 phone_number='string' id=1
+2025-06-09 20:56:52,365 - root - INFO - Animal criado client_id=1 age='string' breed='string' name='string' species='string' id=1
+2025-06-09 20:57:06,642 - root - INFO - CRMV criado cpf='string' status=<StatusEnum.ATIVO: 'ativo'> year_of_graduation='string' graduation_institution='string' id=1
+2025-06-09 20:57:16,909 - root - INFO - Veterinário criado name='string' email='string' specialization='string' age=0 phone_number='string' crmv_id=1 id=1
+2025-06-09 21:14:12,245 - root - INFO - Animal 1 deletado: client_id=1 age='string' breed='string' name='string' species='string' id=1 consultations=[Consultation(vet_id=1, notes='string', data_in=datetime.date(2025, 6, 9), data_out=None, animal_id=1, id=1, updated_at=datetime.date(2025, 6, 9), animal=Animal(client_id=1, age='string', breed='string', name='string', species='string', id=1, consultations=[...]), services=[])]
+2025-06-09 21:14:45,905 - root - INFO - Animal criado client_id=1 age='string' breed='string' name='string' species='string' id=1
+2025-06-09 21:14:47,031 - root - INFO - Animal criado client_id=1 age='string' breed='string' name='string' species='string' id=2
+2025-06-09 21:15:35,465 - root - INFO - Animal 2 deletado: client_id=1 age='string' breed='string' name='string' species='string' id=2 consultations=[Consultation(vet_id=1, notes='string', data_in=datetime.date(2025, 6, 9), data_out=None, animal_id=2, id=1, updated_at=datetime.date(2025, 6, 9), services=[]), Consultation(vet_id=1, notes='string', data_in=datetime.date(2025, 6, 9), data_out=None, animal_id=2, id=2, updated_at=datetime.date(2025, 6, 9), services=[]), Consultation(vet_id=1, notes='string', data_in=datetime.date(2025, 6, 9), data_out=None, animal_id=2, id=3, updated_at=datetime.date(2025, 6, 9), services=[]), Consultation(vet_id=1, notes='string', data_in=datetime.date(2025, 6, 9), data_out=None, animal_id=2, id=4, updated_at=datetime.date(2025, 6, 9), animal=Animal(client_id=1, age='string', breed='string', name='string', species='string', id=2, consultations=[...]), services=[])]
