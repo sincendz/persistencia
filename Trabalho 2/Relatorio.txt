@@ -1,0 +1,17 @@
+Definidas as entidades
+        Modelação do banco de dados no draw db  -> Gustavo
+        Criação dos Models no python            -> Mário
+
+Implementacoes dos cruds
+        Animal, cliente, consulta, serviço  -> Mario
+        Veterinario, CRMV                   -> Gustavo
+
+Logs:
+        Implementação do log       -> Gustavo
+
+Consultas complexas -> Mário
+
+Alembic -> Gustavo
+
+
+         
