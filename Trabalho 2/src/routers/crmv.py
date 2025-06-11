@@ -26,6 +26,14 @@ def length_crmvs(session : Session = Depends(get_session)):
     logging.info('Quantidade de CRMVs chamado')
     return {"Quantidade " : len(session.exec(select(Crmv)).all())}
 
+@router.get("/search_status/{status}", response_model=list[Crmv])
+def search_crmv_by_status(status: str, session : Session = Depends(get_session)):
+    crmvs = session.exec(
+        select(Crmv).where(Crmv.status.ilike(f"%{status}%"))
+    )
+    if not crmvs:
+        raise HTTPException(status_code=404, detail="Nenhum crmv encontrado com esse status.")
+    return crmvs
 @router.get("/page")
 def crmvs_page(page:int = 1, page_size:int = 10, session : Session = Depends(get_session)):
     total_crmvs = len(session.exec(select(Crmv)).all())

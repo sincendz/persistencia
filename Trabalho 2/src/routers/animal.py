@@ -20,7 +20,7 @@ def length_animals(session : Session = Depends(get_session)):
     return {"Quantidade" : len(quantidade) }
 
 @router.get("/{animal_id}", response_model=Animal)
-def search_animal(animal_id: int, session : Session = Depends(get_session)):
+def search_animal_by_id(animal_id: int, session : Session = Depends(get_session)):
     animal = session.get(Animal, animal_id)
     if not animal:
         logging.error('Animal não encontrado.')
@@ -28,10 +28,20 @@ def search_animal(animal_id: int, session : Session = Depends(get_session)):
     logging.info(f'Animal retornado {animal}')
     return animal
 
-@router.get("/search/{species}")
+@router.get("/search_name/{animal_name}", response_model=list[Animal])
+def search_animal_by_name(animal_name:str, session : Session = Depends(get_session)):
+    animals = session.exec(
+        select(Animal).where(Animal.name.ilike(f"%{animal_name}%"))
+    )
+    if not animals:
+        raise HTTPException(status_code=404, detail="Animal não econtrado!")
+    return animals
+
+@router.get("/search_species/{species}", response_model=list[Animal])
 def search_animal_by_species(species: str, session : Session = Depends(get_session)):
-    statement = select(Animal).where(Animal.species==species)
-    animals = session.exec(statement).all()
+    animals = session.exec(
+        select(Animal).where(Animal.species.ilike(f"%{species}%"))
+    )
     if not animals:
         logging.error(f'Animais da espécie {species} não encontrado')
         raise HTTPException(status_code=404, detail=f'Animais da espécie {species} não encontrado')

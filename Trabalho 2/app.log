@@ -265,3 +265,111 @@ CREATE TABLE consultationservicelink (
 2025-06-10 20:14:44,440 - root - INFO - Endpoint GET chamado para clientes
 2025-06-10 20:16:54,853 - root - INFO - Endpoint GET chamado para clientes
 2025-06-10 20:18:01,336 - root - INFO - Endpoint GET chamado para clientes
+2025-06-11 10:10:43,303 - root - INFO - Endpoint GET chamado para clientes
+2025-06-11 10:12:07,533 - root - INFO - Endpoint GET chamado para clientes
+2025-06-11 10:12:47,889 - root - INFO - Cliente criado phone_number='string' id=2 email='string' age=20 name='gUSTAVIN'
+2025-06-11 10:23:01,096 - root - INFO - Cliente 2 atualizado: phone_number='string' id=2 email='gustavo@gmail.com' age=20 name='Gustavo Gurgel'
+2025-06-11 10:27:41,787 - root - INFO - Cliente com animais retornado phone_number='string' id=2 email='gustavo@gmail.com' age=20 name='Gustavo Gurgel'
+2025-06-11 10:27:48,506 - root - ERROR - Cliente não encontrado.
+2025-06-11 10:28:42,427 - root - INFO - Animal criado age='1' name='Amora' breed='Vira-Lata' client_id=2 species='Cachorro' id=5
+2025-06-11 10:28:55,410 - root - INFO - Quantidade de animais chamado
+2025-06-11 10:29:10,409 - root - INFO - Animal retornado [Animal(age='2', name='Pandinha', breed='Vira-lata', client_id=1, species='Cachorro', id=1), Animal(age='2', name='Thor', breed='Poodle', client_id=None, species='Cachorro', id=3), Animal(age='20', name='Caramelo', breed='Vira-lata', client_id=None, species='Cachorro', id=4), Animal(age='1', name='Amora', breed='Vira-Lata', client_id=2, species='Cachorro', id=5)]
+2025-06-11 10:31:37,120 - root - INFO - Endpoint GET chamado para serviços
+2025-06-11 10:32:27,597 - root - INFO - Endpoint GET chamado para veterinarios
+2025-06-11 10:32:43,267 - root - INFO - Endpoint GET chamado para CRMVs
+2025-06-11 10:33:30,680 - root - INFO - Retornado as consultas com o veterinário 1
+2025-06-11 10:33:47,212 - root - INFO - Consulta criada vet_id=1 notes='Vacincao' data_in=datetime.date(2025, 6, 11) data_out=None animal_id=5 id=3 updated_at=datetime.date(2025, 6, 11)
+2025-06-11 10:33:53,971 - root - INFO - Retornado as consultas com o veterinário 1
+2025-06-11 10:34:40,043 - root - INFO - Endpoint GET chamado para consultas e serviços
+2025-06-11 10:34:46,205 - root - INFO - Endpoint GET chamado para consultas e serviços
+2025-06-11 10:34:53,228 - root - INFO - Endpoint GET chamado para consultas e serviços
+2025-06-11 10:35:16,982 - root - INFO - Endpoint GET chamado para consultas
+2025-06-11 10:35:36,987 - root - INFO - Serviço  adicionado a consulta vet_id=1 notes='Vacincao' data_in=datetime.date(2025, 6, 11) data_out=None animal_id=5 id=3 updated_at=datetime.date(2025, 6, 11)
+2025-06-11 10:36:00,762 - root - INFO - Endpoint GET chamado para consultas e serviços
+2025-06-11 10:36:21,122 - root - INFO - Serviço  adicionado a consulta vet_id=1 notes='Vacincao' data_in=datetime.date(2025, 6, 11) data_out=None animal_id=5 id=3 updated_at=datetime.date(2025, 6, 11)
+2025-06-11 10:36:30,227 - root - INFO - Endpoint GET chamado para consultas e serviços
+2025-06-11 10:36:52,108 - root - INFO - Data de término 2025-06-11 adicionado a consulta vet_id=1 notes='Vacincao' data_in=datetime.date(2025, 6, 11) data_out=datetime.date(2025, 6, 11) animal_id=5 id=3 updated_at=datetime.date(2025, 6, 11)
+2025-06-11 10:37:06,494 - root - INFO - Retornado as consultas com o veterinário 1
+2025-06-11 11:56:30,469 - root - INFO - Endpoint GET chamado para clientes
+2025-06-11 11:56:40,624 - root - INFO - Endpoint GET chamado para clientes
+2025-06-11 11:58:06,831 - root - INFO - Endpoint GET chamado para clientes
+2025-06-11 11:59:06,680 - root - INFO - Cliente 3 atualizado: phone_number='88 i love you' id=3 email='predinhogameplay@pedro.com' age=78 name='joao preduu'
+2025-06-11 11:59:16,149 - root - INFO - Endpoint GET chamado para clientes
+2025-06-11 11:59:24,719 - root - INFO - Cliente retornado phone_number='88 i love you' id=3 email='predinhogameplay@pedro.com' age=78 name='joao preduu'
+2025-06-11 11:59:31,459 - root - INFO - Endpoint GET chamado para animais
+2025-06-11 11:59:54,364 - root - INFO - Endpoint GET chamado para clientes
+2025-06-11 12:00:02,773 - root - INFO - Endpoint GET chamado para animais
+2025-06-11 12:00:17,962 - root - INFO - Animal 3 atualizado: age='string' name='Thor' breed='string' client_id=3 species='string' id=3
+2025-06-11 12:00:30,214 - root - INFO - GET animais com paginação chamado
+2025-06-11 12:00:47,954 - root - INFO - Endpoint GET chamado para serviços
+2025-06-11 12:01:02,802 - root - INFO - Endpoint GET chamado para veterinarios
+2025-06-11 12:01:32,274 - root - INFO - Consulta criada vet_id=1 notes='Tirar carrapato' data_in=datetime.date(2025, 6, 11) data_out=None animal_id=3 id=4 updated_at=datetime.date(2025, 6, 11)
+2025-06-11 12:01:50,981 - root - INFO - Retornado as consultas com o veterinário 1
+2025-06-11 12:02:08,742 - root - INFO - Consulta retornada vet_id=1 notes='string' data_in=datetime.date(2025, 6, 9) data_out=datetime.date(2025, 6, 9) animal_id=4 id=2 updated_at=datetime.date(2025, 6, 9)
+2025-06-11 12:02:24,627 - root - INFO - Serviço retornado type_service='CONSULTA' price=80.0 id=2 service_name='Consulta' description='Consulta geral'
+2025-06-11 12:02:40,812 - root - INFO - Serviço  adicionado a consulta vet_id=1 notes='Tirar carrapato' data_in=datetime.date(2025, 6, 11) data_out=None animal_id=3 id=4 updated_at=datetime.date(2025, 6, 11)
+2025-06-11 12:03:04,670 - root - INFO - Endpoint GET chamado para consultas e serviços
+2025-06-11 12:03:09,642 - root - INFO - Endpoint GET chamado para consultas e serviços
+2025-06-11 12:03:25,616 - root - INFO - Serviço  adicionado a consulta vet_id=1 notes='Tirar carrapato' data_in=datetime.date(2025, 6, 11) data_out=None animal_id=3 id=4 updated_at=datetime.date(2025, 6, 11)
+2025-06-11 12:03:34,315 - root - INFO - Endpoint GET chamado para consultas e serviços
+2025-06-11 12:03:52,055 - root - INFO - Data de término 2025-06-11 adicionado a consulta vet_id=1 notes='Tirar carrapato' data_in=datetime.date(2025, 6, 11) data_out=datetime.date(2025, 6, 11) animal_id=3 id=4 updated_at=datetime.date(2025, 6, 11)
+2025-06-11 12:04:03,446 - root - INFO - Endpoint GET chamado para consultas e serviços
+2025-06-11 12:04:20,072 - root - INFO - Retornado as consultas com o veterinário 1
+2025-06-11 12:11:11,156 - root - INFO - Endpoint GET chamado para serviços
+2025-06-11 12:27:20,064 - root - INFO - Endpoint GET chamado para consultas
+2025-06-11 12:27:32,938 - root - INFO - Endpoint GET chamado para consultas e serviços
+2025-06-11 12:27:56,338 - root - INFO - Endpoint GET chamado para consultas
+2025-06-11 12:28:10,946 - root - INFO - Endpoint GET chamado para consultas e serviços
+2025-06-11 12:29:07,154 - root - INFO - Retornado as consultas com o veterinário 1
+2025-06-11 12:29:32,423 - root - INFO - Consulta criada vet_id=1 notes='Consulta' data_in=datetime.date(2025, 6, 11) data_out=None animal_id=1 id=5 updated_at=datetime.date(2025, 6, 11)
+2025-06-11 12:29:36,623 - root - INFO - Retornado as consultas com o veterinário 1
+2025-06-11 12:29:53,346 - root - INFO - Consulta retornada vet_id=1 notes='Consulta' data_in=datetime.date(2025, 6, 11) data_out=None animal_id=1 id=5 updated_at=datetime.date(2025, 6, 11)
+2025-06-11 12:30:00,164 - root - INFO - Endpoint GET chamado para consultas e serviços
+2025-06-11 12:30:31,239 - root - INFO - Serviço  adicionado a consulta vet_id=1 notes='Consulta' data_in=datetime.date(2025, 6, 11) data_out=None animal_id=1 id=5 updated_at=datetime.date(2025, 6, 11)
+2025-06-11 12:31:03,539 - root - INFO - Data de término 2025-06-11 adicionado a consulta vet_id=1 notes='Consulta' data_in=datetime.date(2025, 6, 11) data_out=datetime.date(2025, 6, 11) animal_id=1 id=5 updated_at=datetime.date(2025, 6, 11)
+2025-06-11 12:31:24,611 - root - INFO - Retornado as consultas com o veterinário 1
+2025-06-11 12:43:08,858 - root - INFO - Endpoint GET chamado para CRMVs
+2025-06-11 12:43:49,508 - root - INFO - Veterinário criado age=25 phone_number='string' crmv_id=1 id=2 name='Gustavo' email='gurgel@gmail.com' specialization='Oncologia'
+2025-06-11 12:47:01,283 - root - INFO - Veterinário 2 deletado: age=25 phone_number='string' crmv_id=1 id=2 name='Gustavo' email='gurgel@gmail.com' specialization='Oncologia'
+2025-06-11 12:47:06,370 - root - INFO - Endpoint GET chamado para veterinarios
+2025-06-11 12:48:35,227 - root - INFO - 1
+2025-06-11 12:48:35,238 - root - INFO - Veterinário criado age=25 phone_number='string' crmv_id=1 id=2 name='Gustavo' email='gurgel@gmail.com' specialization='Oncologia'
+2025-06-11 12:51:13,207 - root - INFO - 1
+2025-06-11 12:51:13,217 - root - INFO - CRMV já atrelado a um veterinario
+2025-06-11 12:51:22,689 - root - INFO - Endpoint GET chamado para veterinarios
+2025-06-11 12:51:36,523 - root - INFO - Veterinário 2 deletado: age=25 phone_number='string' crmv_id=1 id=2 name='Gustavo' email='gurgel@gmail.com' specialization='Oncologia'
+2025-06-11 12:51:49,478 - root - INFO - 3
+2025-06-11 12:51:49,479 - root - ERROR - Veterinário com crmv inválido
+2025-06-11 12:51:55,489 - root - INFO - 1
+2025-06-11 12:51:55,490 - root - INFO - CRMV já atrelado a um veterinario
+2025-06-11 12:52:02,478 - root - INFO - 2
+2025-06-11 12:52:02,481 - root - ERROR - Veterinário com crmv inválido
+2025-06-11 12:52:19,700 - root - INFO - CRMV criado year_of_graduation='string' graduation_institution='string' id=2 status=<StatusEnum.ATIVO: 'ativo'> cpf='string'
+2025-06-11 12:52:29,469 - root - INFO - 2
+2025-06-11 12:52:29,471 - root - INFO - CRMV já atrelado a um veterinario
+2025-06-11 12:52:39,847 - root - INFO - Endpoint GET chamado para veterinarios
+2025-06-11 12:53:00,689 - root - INFO - Endpoint GET chamado para CRMVs
+2025-06-11 12:53:39,074 - root - INFO - CRMV 2 atualizado: year_of_graduation='2011.2' graduation_institution='UECE' id=2 status=<StatusEnum.ATIVO: 'ativo'> cpf='12313131'
+2025-06-11 12:53:55,727 - root - INFO - Endpoint GET chamado para veterinarios
+2025-06-11 12:54:29,136 - root - INFO - 2
+2025-06-11 12:54:29,138 - root - INFO - CRMV já atrelado a um veterinario
+2025-06-11 12:55:17,599 - root - INFO - 2
+2025-06-11 12:55:17,607 - root - INFO - <sqlalchemy.engine.result.ScalarResult object at 0x7e369d1a2620>
+2025-06-11 12:55:17,607 - root - INFO - CRMV já atrelado a um veterinario
+2025-06-11 12:55:35,790 - root - INFO - 1
+2025-06-11 12:55:35,792 - root - INFO - <sqlalchemy.engine.result.ScalarResult object at 0x7e369d179a40>
+2025-06-11 12:55:35,792 - root - INFO - CRMV já atrelado a um veterinario
+2025-06-11 12:57:19,175 - root - INFO - 1
+2025-06-11 12:57:19,188 - root - INFO - CRMV já atrelado a um veterinario
+2025-06-11 12:57:30,163 - root - INFO - 2
+2025-06-11 12:57:30,177 - root - INFO - Veterinário criado age=30 phone_number='string' crmv_id=2 id=2 name='Gustavo' email='gg@gmail.com' specialization='Oncologia'
+2025-06-11 13:05:00,492 - root - INFO - Endpoint GET chamado para veterinarios
+2025-06-11 13:07:35,228 - root - INFO - Animal retornado <sqlalchemy.engine.result.ScalarResult object at 0x74950536fac0>
+2025-06-11 13:09:12,742 - root - INFO - Endpoint GET chamado para animais
+2025-06-11 13:09:24,317 - root - INFO - Animal retornado <sqlalchemy.engine.result.ScalarResult object at 0x723212302580>
+2025-06-11 13:10:49,604 - root - INFO - Animal retornado [Animal(name='Pandinha', age='2', breed='Vira-lata', client_id=1, species='Cachorro', id=1), Animal(name='Caramelo', age='20', breed='Vira-lata', client_id=None, species='Cachorro', id=4), Animal(name='Amora', age='1', breed='Vira-Lata', client_id=2, species='Cachorro', id=5)]
+2025-06-11 13:12:26,363 - root - INFO - Animal retornado <sqlalchemy.engine.result.ScalarResult object at 0x728a8a3c08c0>
+2025-06-11 13:12:32,704 - root - INFO - Animal retornado <sqlalchemy.engine.result.ScalarResult object at 0x728a8a37ab70>
+2025-06-11 13:13:35,717 - root - INFO - Endpoint GET chamado para CRMVs
+2025-06-11 13:17:22,342 - root - INFO - Endpoint GET chamado para consultas
+2025-06-11 13:17:59,592 - root - INFO - Endpoint GET chamado para consultas e serviços

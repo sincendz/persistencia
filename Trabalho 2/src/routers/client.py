@@ -13,13 +13,22 @@ def read_clients(session : Session = Depends(get_session)):
     return session.exec(select(Client)).all()
 
 @router.get("/search/{client_id}", response_model=Client)
-def search_client(client_id, session : Session = Depends(get_session)):
+def search_client_by_id(client_id, session : Session = Depends(get_session)):
     client = session.get(Client, client_id)
     if not client:
         logging.error('Cliente não encontrado.')
         raise HTTPException(status_code=404, detail="Cliente não existe!")
     logging.info(f'Cliente retornado {client}')
     return client
+
+@router.get("/search_by_name/{client_name}", response_model=list[Client])
+def search_client_by_name(client_name:str , session : Session = Depends(get_session)):
+    clients = session.exec(
+        select(Client).where(Client.name.ilike(f"%{client_name}%"))
+    )
+    if not clients:
+        raise HTTPException(status_code=404, detail="Cliente não encontrado.")
+    return clients
 
 @router.get("/clients_length")
 def length_clients(session : Session = Depends(get_session)):

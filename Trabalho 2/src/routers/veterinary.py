@@ -13,13 +13,22 @@ def read_veterinaries(session : Session = Depends(get_session)):
     return session.exec(select(Veterinary)).all()
 
 @router.get("/search/{veterinary_id}", response_model=Veterinary)
-def search_veterinary(veterinary_id, session : Session = Depends(get_session)):
+def search_veterinary_by_id(veterinary_id, session : Session = Depends(get_session)):
     veterinary = session.get(Veterinary, veterinary_id)
     if not veterinary:
         logging.error('Veterinário não encontrado.')
         raise HTTPException(status_code=404, detail="Veterinário não existe!")
     logging.info(f'Veterinário retornado {veterinary}')
     return veterinary
+
+@router.get("/search_name/{vet_name}", response_model=list[Veterinary])
+def search_veterinary_by_name(vet_name: str, session : Session = Depends(get_session)):
+    vets = session.exec(
+        select(Veterinary).where(Veterinary.name.ilike(f"%{vet_name}%"))
+    ).all()
+    if not vets:
+        raise HTTPException(status_code=404, detail="Veterinario não encontrado.")
+    return vets
 
 @router.get("/veterinaries_length")
 def length_veterinaries(session : Session = Depends(get_session)):
@@ -54,14 +63,22 @@ def open_consultations_for_a_vet(veterinary_id:int, session : Session = Depends(
 
 @router.post("/", response_model=Veterinary)
 def create_veterinary(veterinary:VeterinaryBase, session : Session = Depends(get_session)):
+    
     db_veterinary = Veterinary.from_orm(veterinary)
-
+    logging.info(veterinary.crmv_id)
     crmv = session.get(Crmv,veterinary.crmv_id)
+    crmv_vet = session.exec(
+        select(Veterinary).where(Veterinary.crmv_id == veterinary.crmv_id)
+    ).first()
 
     if not crmv:
         logging.error('Veterinário com crmv inválido')
         raise HTTPException(status_code=404, detail="Crmv de veterinário passado não existe!")
 
+    if crmv_vet:
+        logging.info("CRMV já atrelado a um veterinario")
+        raise HTTPException(status_code=403, detail="CRMV já pertence a outro veterinário.")
+    
     session.add(db_veterinary)
     session.commit()
     session.refresh(db_veterinary)

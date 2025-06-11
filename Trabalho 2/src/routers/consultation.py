@@ -16,7 +16,7 @@ def read_consultation(session: Session = Depends(get_session)):
 
 
 @router.get("/search/{consultation_id}", response_model=Consultation)
-def search_consultation(consultation_id: int, session: Session = Depends(get_session)):
+def search_consultation_by_id(consultation_id: int, session: Session = Depends(get_session)):
     consultation = session.get(Consultation, consultation_id)
     if not consultation:
         logging.error('Consulta não encontrada.')
