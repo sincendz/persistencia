@@ -13,13 +13,24 @@ def read_services(session : Session = Depends(get_session)):
     return session.exec(select(Service)).all()
 
 @router.get("/search/{service_id}", response_model=Service)
-def search_service(service_id : int, session: Session = Depends(get_session)):
+def search_service_by_id(service_id : int, session: Session = Depends(get_session)):
     service = session.get(Service,service_id)
     if not service:
         logging.error('Serviço não encontrado')
         raise HTTPException(status_code=404, detail="Serviço não encontrado.")
     logging.info(f'Serviço retornado {service}')
     return service
+
+@router.get("/search_by_name/{name}", response_model=list[Service])
+def search_service_by_name(name_service: str, session : Session = Depends(get_session)):
+    services = session.exec(
+        select(Service).where(Service.service_name.ilike(f"%{name_service}%"))
+    ).all()
+    
+    if not services:
+        raise HTTPException(status_code=404, detail="Nenhum serviço encontrado.")
+    
+    return services
 
 @router.get("/services_length")
 def length_service(session: Session = Depends(get_session)):
