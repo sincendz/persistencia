@@ -5,8 +5,8 @@ from logging.config import fileConfig
 from sqlalchemy import pool
 from alembic import context
 
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
-from sqlmodel import SQLModel # use o caminho correto
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
+from sqlmodel import SQLModel  # use o caminho correto
 from database import DATABASE_URL
 
 config = context.config
@@ -15,8 +15,10 @@ if config.config_file_name is not None:
 
 target_metadata = SQLModel.metadata
 
+
 def get_url():
     return DATABASE_URL
+
 
 def run_migrations_offline():
     url = get_url()
@@ -29,15 +31,16 @@ def run_migrations_offline():
     with context.begin_transaction():
         context.run_migrations()
 
+
 def run_migrations_online():
     from sqlalchemy import create_engine
+
     connectable = create_engine(get_url(), poolclass=pool.NullPool)
     with connectable.connect() as connection:
-        context.configure(
-            connection=connection, target_metadata=target_metadata
-        )
+        context.configure(connection=connection, target_metadata=target_metadata)
         with context.begin_transaction():
             context.run_migrations()
+
 
 if context.is_offline_mode():
     run_migrations_offline()
